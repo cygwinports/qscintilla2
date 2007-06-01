@@ -1,4 +1,4 @@
-category: KDE X11
+category: KDE
 requires: cygwin qt3
 sdesc: "Scintilla editor class for Qt3 (runtime library)"
 ldesc: "QScintilla is a port to Qt of Neil Hodgson's Scintilla C++ 

@@ -1,4 +1,4 @@
-qscintilla
+qscintilla2
 -------------------------------------------
 QScintilla is a port to Qt of Neil Hodgson's Scintilla C++ editor class.
 
@@ -12,51 +12,58 @@ allowing the use of proportional fonts, bold and italics, multiple
 foreground and background colours and multiple fonts. 
 
 Runtime requirements:
-  cygwin-1.5.23-2
-  qt3-3.3.7-1
+  cygwin-1.5.24-2
+  qt3-3.3.8-1
+(python-qscintilla2)
+  python-2.5.1-1
+  python-qt-3.17.2-2
+  python-sip-4.6-2
 
 Build requirements:
-  cygwin-1.5.23-2
+(besides corresponding devel packages)
+  cygwin-1.5.24-2
   binutils-20060817-1
-  cygport-0.2.7-1
+  cygport-0.2.11-1
   gcc-core-3.4.4-3
   gcc-g++-3.4.4-3
   make-3.81-1
-  qt3-devel-3.3.7-1
 
 Canonical homepage:
   http://www.riverbankcomputing.co.uk/qscintilla/
 
 Canonical download:
-  http://www.river-bank.demon.co.uk/download/QScintilla/
+  http://www.river-bank.demon.co.uk/download/QScintilla2/
 
 -------------------------------------------
 
 Build instructions:
-  unpack qscintilla-1.71-X-src.tar.bz2
+  unpack qscintilla2-2.1-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./qscintilla-1.71-X.cygport all
+  cygport ./qscintilla2-2.1-X.cygport all
 
 This will create:
-  /usr/src/qscintilla-1.71-X-src.tar.bz2
-  /usr/src/qscintilla-1.71-X.tar.bz2
-  /usr/src/qscintilla-devel-1.71-X.tar.bz2
-  /usr/src/qscintilla-doc-1.71-X.tar.bz2
+  /usr/src/python-qscintilla2-2.1-X.tar.bz2
+  /usr/src/qscintilla2-2.1-X-src.tar.bz2
+  /usr/src/qscintilla2-2.1-X.tar.bz2
+  /usr/src/qscintilla2-devel-2.1-X.tar.bz2
+  /usr/src/qscintilla2-doc-2.1-X.tar.bz2
 
 -------------------------------------------
 
 Files included in the binary packages:
 
-(qscintilla)
-  /usr/bin/cygqscintilla-7.dll
+(qscintilla2)
+  /usr/bin/cygqscintilla2-2.dll
   /usr/lib/qt3/plugins/designer/libqscintillaplugin.dll
-  /usr/share/doc/Cygwin/qscintilla-1.71.README
-  /usr/share/doc/qscintilla-1.71/ChangeLog
-  /usr/share/doc/qscintilla-1.71/LICENSE
-  /usr/share/doc/qscintilla-1.71/NEWS
-  /usr/share/doc/qscintilla-1.71/README
+  /usr/share/doc/Cygwin/qscintilla2-2.1.README
+  /usr/share/doc/qscintilla2-2.1/ChangeLog
+  /usr/share/doc/qscintilla2-2.1/LICENSE
+  /usr/share/doc/qscintilla2-2.1/NEWS
+  /usr/share/doc/qscintilla2-2.1/README
+  /usr/share/qt3/translations/qscintilla_cs.qm
+  /usr/share/qt3/translations/qscintilla_cs.ts
   /usr/share/qt3/translations/qscintilla_de.qm
   /usr/share/qt3/translations/qscintilla_de.ts
   /usr/share/qt3/translations/qscintilla_fr.qm
@@ -66,221 +73,251 @@ Files included in the binary packages:
   /usr/share/qt3/translations/qscintilla_ru.qm
   /usr/share/qt3/translations/qscintilla_ru.ts
 
-(qscintilla-devel)
-  /usr/include/qt3/qextscintilla.h
-  /usr/include/qt3/qextscintillaapis.h
-  /usr/include/qt3/qextscintillabase.h
-  /usr/include/qt3/qextscintillacommand.h
-  /usr/include/qt3/qextscintillacommandset.h
-  /usr/include/qt3/qextscintilladocument.h
-  /usr/include/qt3/qextscintillaglobal.h
-  /usr/include/qt3/qextscintillalexer.h
-  /usr/include/qt3/qextscintillalexerbash.h
-  /usr/include/qt3/qextscintillalexerbatch.h
-  /usr/include/qt3/qextscintillalexercpp.h
-  /usr/include/qt3/qextscintillalexercsharp.h
-  /usr/include/qt3/qextscintillalexercss.h
-  /usr/include/qt3/qextscintillalexerdiff.h
-  /usr/include/qt3/qextscintillalexerhtml.h
-  /usr/include/qt3/qextscintillalexeridl.h
-  /usr/include/qt3/qextscintillalexerjava.h
-  /usr/include/qt3/qextscintillalexerjavascript.h
-  /usr/include/qt3/qextscintillalexerlua.h
-  /usr/include/qt3/qextscintillalexermakefile.h
-  /usr/include/qt3/qextscintillalexerperl.h
-  /usr/include/qt3/qextscintillalexerpov.h
-  /usr/include/qt3/qextscintillalexerproperties.h
-  /usr/include/qt3/qextscintillalexerpython.h
-  /usr/include/qt3/qextscintillalexerruby.h
-  /usr/include/qt3/qextscintillalexersql.h
-  /usr/include/qt3/qextscintillalexertex.h
-  /usr/include/qt3/qextscintillamacro.h
-  /usr/include/qt3/qextscintillaprinter.h
-  /usr/lib/qt3/lib/libqscintilla.dll.a
+(qscintilla2-devel)
+  /usr/include/qt3/Qsci/qsciapis.h
+  /usr/include/qt3/Qsci/qscicommand.h
+  /usr/include/qt3/Qsci/qscicommandset.h
+  /usr/include/qt3/Qsci/qscidocument.h
+  /usr/include/qt3/Qsci/qsciglobal.h
+  /usr/include/qt3/Qsci/qscilexer.h
+  /usr/include/qt3/Qsci/qscilexerbash.h
+  /usr/include/qt3/Qsci/qscilexerbatch.h
+  /usr/include/qt3/Qsci/qscilexercmake.h
+  /usr/include/qt3/Qsci/qscilexercpp.h
+  /usr/include/qt3/Qsci/qscilexercsharp.h
+  /usr/include/qt3/Qsci/qscilexercss.h
+  /usr/include/qt3/Qsci/qscilexerd.h
+  /usr/include/qt3/Qsci/qscilexerdiff.h
+  /usr/include/qt3/Qsci/qscilexerhtml.h
+  /usr/include/qt3/Qsci/qscilexeridl.h
+  /usr/include/qt3/Qsci/qscilexerjava.h
+  /usr/include/qt3/Qsci/qscilexerjavascript.h
+  /usr/include/qt3/Qsci/qscilexerlua.h
+  /usr/include/qt3/Qsci/qscilexermakefile.h
+  /usr/include/qt3/Qsci/qscilexerperl.h
+  /usr/include/qt3/Qsci/qscilexerpov.h
+  /usr/include/qt3/Qsci/qscilexerproperties.h
+  /usr/include/qt3/Qsci/qscilexerpython.h
+  /usr/include/qt3/Qsci/qscilexerruby.h
+  /usr/include/qt3/Qsci/qscilexersql.h
+  /usr/include/qt3/Qsci/qscilexertex.h
+  /usr/include/qt3/Qsci/qscilexervhdl.h
+  /usr/include/qt3/Qsci/qscimacro.h
+  /usr/include/qt3/Qsci/qsciprinter.h
+  /usr/include/qt3/Qsci/qsciscintilla.h
+  /usr/include/qt3/Qsci/qsciscintillabase.h
+  /usr/lib/qt3/lib/libqscintilla2.dll.a
 
-(qscintilla-doc)
-  /usr/share/doc/qscintilla-1.71/Scintilla/Design.html
-  /usr/share/doc/qscintilla-1.71/Scintilla/Icons.html
-  /usr/share/doc/qscintilla-1.71/Scintilla/Lexer.txt
-  /usr/share/doc/qscintilla-1.71/Scintilla/License.txt
-  /usr/share/doc/qscintilla-1.71/Scintilla/SciBreak.jpg
-  /usr/share/doc/qscintilla-1.71/Scintilla/SciCoding.html
-  /usr/share/doc/qscintilla-1.71/Scintilla/SciRest.jpg
-  /usr/share/doc/qscintilla-1.71/Scintilla/SciTEIco.png
-  /usr/share/doc/qscintilla-1.71/Scintilla/SciWord.jpg
-  /usr/share/doc/qscintilla-1.71/Scintilla/ScintillaDoc.html
-  /usr/share/doc/qscintilla-1.71/Scintilla/ScintillaDownload.html
-  /usr/share/doc/qscintilla-1.71/Scintilla/ScintillaHistory.html
-  /usr/share/doc/qscintilla-1.71/Scintilla/ScintillaRelated.html
-  /usr/share/doc/qscintilla-1.71/Scintilla/ScintillaToDo.html
-  /usr/share/doc/qscintilla-1.71/Scintilla/ScintillaUsage.html
-  /usr/share/doc/qscintilla-1.71/Scintilla/Steps.html
-  /usr/share/doc/qscintilla-1.71/Scintilla/index.html
-  /usr/share/doc/qscintilla-1.71/html/annotated.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintilla-members.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintilla.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaAPIs-members.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaAPIs.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaBase-members.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaBase.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaCommand-members.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaCommand.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaCommandSet-members.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaCommandSet.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaDocument-members.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaDocument.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaLexer-members.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaLexer.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaLexerBash-members.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaLexerBash.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaLexerBatch-members.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaLexerBatch.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaLexerCPP-members.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaLexerCPP.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaLexerCSS-members.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaLexerCSS.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaLexerCSharp-members.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaLexerCSharp.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaLexerDiff-members.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaLexerDiff.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaLexerHTML-members.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaLexerHTML.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaLexerIDL-members.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaLexerIDL.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaLexerJava-members.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaLexerJava.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaLexerJavaScript-members.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaLexerJavaScript.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaLexerLua-members.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaLexerLua.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaLexerMakefile-members.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaLexerMakefile.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaLexerPOV-members.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaLexerPOV.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaLexerPerl-members.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaLexerPerl.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaLexerProperties-members.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaLexerProperties.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaLexerPython-members.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaLexerPython.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaLexerRuby-members.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaLexerRuby.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaLexerSQL-members.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaLexerSQL.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaLexerTeX-members.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaLexerTeX.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaMacro-members.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaMacro.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaPrinter-members.html
-  /usr/share/doc/qscintilla-1.71/html/classQextScintillaPrinter.html
-  /usr/share/doc/qscintilla-1.71/html/deprecated.html
-  /usr/share/doc/qscintilla-1.71/html/doxygen.css
-  /usr/share/doc/qscintilla-1.71/html/doxygen.png
-  /usr/share/doc/qscintilla-1.71/html/functions.html
-  /usr/share/doc/qscintilla-1.71/html/functions_0x62.html
-  /usr/share/doc/qscintilla-1.71/html/functions_0x63.html
-  /usr/share/doc/qscintilla-1.71/html/functions_0x64.html
-  /usr/share/doc/qscintilla-1.71/html/functions_0x65.html
-  /usr/share/doc/qscintilla-1.71/html/functions_0x66.html
-  /usr/share/doc/qscintilla-1.71/html/functions_0x67.html
-  /usr/share/doc/qscintilla-1.71/html/functions_0x68.html
-  /usr/share/doc/qscintilla-1.71/html/functions_0x69.html
-  /usr/share/doc/qscintilla-1.71/html/functions_0x6a.html
-  /usr/share/doc/qscintilla-1.71/html/functions_0x6b.html
-  /usr/share/doc/qscintilla-1.71/html/functions_0x6c.html
-  /usr/share/doc/qscintilla-1.71/html/functions_0x6d.html
-  /usr/share/doc/qscintilla-1.71/html/functions_0x6e.html
-  /usr/share/doc/qscintilla-1.71/html/functions_0x6f.html
-  /usr/share/doc/qscintilla-1.71/html/functions_0x70.html
-  /usr/share/doc/qscintilla-1.71/html/functions_0x71.html
-  /usr/share/doc/qscintilla-1.71/html/functions_0x72.html
-  /usr/share/doc/qscintilla-1.71/html/functions_0x73.html
-  /usr/share/doc/qscintilla-1.71/html/functions_0x74.html
-  /usr/share/doc/qscintilla-1.71/html/functions_0x75.html
-  /usr/share/doc/qscintilla-1.71/html/functions_0x76.html
-  /usr/share/doc/qscintilla-1.71/html/functions_0x77.html
-  /usr/share/doc/qscintilla-1.71/html/functions_0x78.html
-  /usr/share/doc/qscintilla-1.71/html/functions_0x7a.html
-  /usr/share/doc/qscintilla-1.71/html/functions_0x7e.html
-  /usr/share/doc/qscintilla-1.71/html/functions_enum.html
-  /usr/share/doc/qscintilla-1.71/html/functions_eval.html
-  /usr/share/doc/qscintilla-1.71/html/functions_eval_0x62.html
-  /usr/share/doc/qscintilla-1.71/html/functions_eval_0x63.html
-  /usr/share/doc/qscintilla-1.71/html/functions_eval_0x64.html
-  /usr/share/doc/qscintilla-1.71/html/functions_eval_0x65.html
-  /usr/share/doc/qscintilla-1.71/html/functions_eval_0x66.html
-  /usr/share/doc/qscintilla-1.71/html/functions_eval_0x67.html
-  /usr/share/doc/qscintilla-1.71/html/functions_eval_0x68.html
-  /usr/share/doc/qscintilla-1.71/html/functions_eval_0x69.html
-  /usr/share/doc/qscintilla-1.71/html/functions_eval_0x6a.html
-  /usr/share/doc/qscintilla-1.71/html/functions_eval_0x6b.html
-  /usr/share/doc/qscintilla-1.71/html/functions_eval_0x6c.html
-  /usr/share/doc/qscintilla-1.71/html/functions_eval_0x6d.html
-  /usr/share/doc/qscintilla-1.71/html/functions_eval_0x6e.html
-  /usr/share/doc/qscintilla-1.71/html/functions_eval_0x6f.html
-  /usr/share/doc/qscintilla-1.71/html/functions_eval_0x70.html
-  /usr/share/doc/qscintilla-1.71/html/functions_eval_0x71.html
-  /usr/share/doc/qscintilla-1.71/html/functions_eval_0x72.html
-  /usr/share/doc/qscintilla-1.71/html/functions_eval_0x73.html
-  /usr/share/doc/qscintilla-1.71/html/functions_eval_0x74.html
-  /usr/share/doc/qscintilla-1.71/html/functions_eval_0x75.html
-  /usr/share/doc/qscintilla-1.71/html/functions_eval_0x76.html
-  /usr/share/doc/qscintilla-1.71/html/functions_eval_0x77.html
-  /usr/share/doc/qscintilla-1.71/html/functions_eval_0x78.html
-  /usr/share/doc/qscintilla-1.71/html/functions_func.html
-  /usr/share/doc/qscintilla-1.71/html/functions_func_0x62.html
-  /usr/share/doc/qscintilla-1.71/html/functions_func_0x63.html
-  /usr/share/doc/qscintilla-1.71/html/functions_func_0x64.html
-  /usr/share/doc/qscintilla-1.71/html/functions_func_0x65.html
-  /usr/share/doc/qscintilla-1.71/html/functions_func_0x66.html
-  /usr/share/doc/qscintilla-1.71/html/functions_func_0x67.html
-  /usr/share/doc/qscintilla-1.71/html/functions_func_0x68.html
-  /usr/share/doc/qscintilla-1.71/html/functions_func_0x69.html
-  /usr/share/doc/qscintilla-1.71/html/functions_func_0x6b.html
-  /usr/share/doc/qscintilla-1.71/html/functions_func_0x6c.html
-  /usr/share/doc/qscintilla-1.71/html/functions_func_0x6d.html
-  /usr/share/doc/qscintilla-1.71/html/functions_func_0x70.html
-  /usr/share/doc/qscintilla-1.71/html/functions_func_0x71.html
-  /usr/share/doc/qscintilla-1.71/html/functions_func_0x72.html
-  /usr/share/doc/qscintilla-1.71/html/functions_func_0x73.html
-  /usr/share/doc/qscintilla-1.71/html/functions_func_0x74.html
-  /usr/share/doc/qscintilla-1.71/html/functions_func_0x75.html
-  /usr/share/doc/qscintilla-1.71/html/functions_func_0x76.html
-  /usr/share/doc/qscintilla-1.71/html/functions_func_0x77.html
-  /usr/share/doc/qscintilla-1.71/html/functions_func_0x7a.html
-  /usr/share/doc/qscintilla-1.71/html/functions_func_0x7e.html
-  /usr/share/doc/qscintilla-1.71/html/hierarchy.html
-  /usr/share/doc/qscintilla-1.71/html/index.html
-  /usr/share/doc/qscintilla-1.71/html/pages.html
-  /usr/share/doc/qscintilla-1.71/html/tab_b.gif
-  /usr/share/doc/qscintilla-1.71/html/tab_l.gif
-  /usr/share/doc/qscintilla-1.71/html/tab_r.gif
-  /usr/share/doc/qscintilla-1.71/html/tabs.css
+(qscintilla2-doc)
+  /usr/share/doc/qscintilla2-2.1/Scintilla/Design.html
+  /usr/share/doc/qscintilla2-2.1/Scintilla/Icons.html
+  /usr/share/doc/qscintilla2-2.1/Scintilla/Lexer.txt
+  /usr/share/doc/qscintilla2-2.1/Scintilla/SciBreak.jpg
+  /usr/share/doc/qscintilla2-2.1/Scintilla/SciCoding.html
+  /usr/share/doc/qscintilla2-2.1/Scintilla/SciRest.jpg
+  /usr/share/doc/qscintilla2-2.1/Scintilla/SciTEIco.png
+  /usr/share/doc/qscintilla2-2.1/Scintilla/SciWord.jpg
+  /usr/share/doc/qscintilla2-2.1/Scintilla/ScintillaDoc.html
+  /usr/share/doc/qscintilla2-2.1/Scintilla/ScintillaDownload.html
+  /usr/share/doc/qscintilla2-2.1/Scintilla/ScintillaHistory.html
+  /usr/share/doc/qscintilla2-2.1/Scintilla/ScintillaRelated.html
+  /usr/share/doc/qscintilla2-2.1/Scintilla/ScintillaToDo.html
+  /usr/share/doc/qscintilla2-2.1/Scintilla/ScintillaUsage.html
+  /usr/share/doc/qscintilla2-2.1/Scintilla/Steps.html
+  /usr/share/doc/qscintilla2-2.1/Scintilla/index.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/annotated.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciAPIs-members.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciAPIs.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciCommand-members.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciCommand.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciCommandSet-members.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciCommandSet.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciDocument-members.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciDocument.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexer-members.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexer.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerBash-members.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerBash.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerBatch-members.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerBatch.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerCMake-members.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerCMake.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerCPP-members.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerCPP.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerCSS-members.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerCSS.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerCSharp-members.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerCSharp.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerD-members.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerD.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerDiff-members.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerDiff.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerHTML-members.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerHTML.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerIDL-members.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerIDL.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerJava-members.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerJava.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerJavaScript-members.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerJavaScript.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerLua-members.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerLua.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerMakefile-members.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerMakefile.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerPOV-members.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerPOV.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerPerl-members.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerPerl.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerProperties-members.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerProperties.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerPython-members.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerPython.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerRuby-members.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerRuby.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerSQL-members.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerSQL.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerTeX-members.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerTeX.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerVHDL-members.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciLexerVHDL.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciMacro-members.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciMacro.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciPrinter-members.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciPrinter.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciScintilla-members.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciScintilla.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciScintillaBase-members.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/classQsciScintillaBase.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/dir_9249b4e54a4f8a075ab18538f86f61c0.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/dir_fd1ad57cf46b73d969bcada396c2a583.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/dirs.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/doxygen.css
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/doxygen.png
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_0x62.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_0x63.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_0x64.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_0x65.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_0x66.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_0x67.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_0x68.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_0x69.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_0x6a.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_0x6b.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_0x6c.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_0x6d.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_0x6e.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_0x6f.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_0x70.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_0x71.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_0x72.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_0x73.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_0x74.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_0x75.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_0x76.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_0x77.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_0x78.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_0x7a.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_0x7e.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_enum.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_eval.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_eval_0x62.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_eval_0x63.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_eval_0x64.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_eval_0x65.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_eval_0x66.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_eval_0x67.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_eval_0x68.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_eval_0x69.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_eval_0x6a.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_eval_0x6b.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_eval_0x6c.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_eval_0x6d.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_eval_0x6e.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_eval_0x6f.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_eval_0x70.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_eval_0x71.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_eval_0x72.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_eval_0x73.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_eval_0x74.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_eval_0x75.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_eval_0x76.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_eval_0x77.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_eval_0x78.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_func.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_func_0x62.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_func_0x63.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_func_0x64.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_func_0x65.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_func_0x66.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_func_0x67.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_func_0x68.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_func_0x69.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_func_0x6b.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_func_0x6c.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_func_0x6d.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_func_0x70.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_func_0x71.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_func_0x72.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_func_0x73.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_func_0x74.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_func_0x75.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_func_0x76.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_func_0x77.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_func_0x7a.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/functions_func_0x7e.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/hierarchy.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/index.html
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/tab_b.gif
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/tab_l.gif
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/tab_r.gif
+  /usr/share/doc/qscintilla2-2.1/html-Qt3/tabs.css
+
+(python-qscintilla2)
+  /usr/lib/python2.5/site-packages/qsci.dll
+  /usr/lib/qt3/qsci/api/python/QScintilla2.api
+  /usr/share/sip/qsci/qsciapis.sip
+  /usr/share/sip/qsci/qscicommand.sip
+  /usr/share/sip/qsci/qscicommandset.sip
+  /usr/share/sip/qsci/qscidocument.sip
+  /usr/share/sip/qsci/qscilexer.sip
+  /usr/share/sip/qsci/qscilexerbash.sip
+  /usr/share/sip/qsci/qscilexerbatch.sip
+  /usr/share/sip/qsci/qscilexercmake.sip
+  /usr/share/sip/qsci/qscilexercpp.sip
+  /usr/share/sip/qsci/qscilexercsharp.sip
+  /usr/share/sip/qsci/qscilexercss.sip
+  /usr/share/sip/qsci/qscilexerd.sip
+  /usr/share/sip/qsci/qscilexerdiff.sip
+  /usr/share/sip/qsci/qscilexerhtml.sip
+  /usr/share/sip/qsci/qscilexeridl.sip
+  /usr/share/sip/qsci/qscilexerjava.sip
+  /usr/share/sip/qsci/qscilexerjavascript.sip
+  /usr/share/sip/qsci/qscilexerlua.sip
+  /usr/share/sip/qsci/qscilexermakefile.sip
+  /usr/share/sip/qsci/qscilexerperl.sip
+  /usr/share/sip/qsci/qscilexerpov.sip
+  /usr/share/sip/qsci/qscilexerproperties.sip
+  /usr/share/sip/qsci/qscilexerpython.sip
+  /usr/share/sip/qsci/qscilexerruby.sip
+  /usr/share/sip/qsci/qscilexersql.sip
+  /usr/share/sip/qsci/qscilexertex.sip
+  /usr/share/sip/qsci/qscilexervhdl.sip
+  /usr/share/sip/qsci/qscimacro.sip
+  /usr/share/sip/qsci/qscimod3.sip
+  /usr/share/sip/qsci/qscimod4.sip
+  /usr/share/sip/qsci/qscimodcommon.sip
+  /usr/share/sip/qsci/qsciprinter.sip
+  /usr/share/sip/qsci/qsciscintilla.sip
+  /usr/share/sip/qsci/qsciscintillabase3.sip
+  /usr/share/sip/qsci/qsciscintillabase4.sip
 
 ------------------
 
 Port Notes:
 
------ version 1.71-1 -----
-Version and ABI bump.
-
------ version 1.65-4 -----
-Moved headers into /usr/include/qt3 for libsmokeqt.
-
------ version 1.65-3 -----
-Rebuilt for qt-3.3.6.
-
------ version 1.65-2 -----
-Rebuilt for qt-3.3.5.
-
------ version 1.65-1 -----
-Version and ABI bump.
-
------ version 1.62-1 -----
-Upstream version bump.
-
------ version 1.61-1 -----
-Initial release for Cygwin.
+----- version 2.1-1 -----
+Initial release of 2.x API for Cygwin.
 
 
 Cygwin port maintained by:
