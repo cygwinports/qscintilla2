@@ -1,0 +1,49 @@
+inherit python qt4-qmake
+
+DESCRIPTION="Qt port of Scintilla STL"
+HOMEPAGE="http://www.riverbankcomputing.com/software/qscintilla/"
+SRC_URI="http://www.riverbankcomputing.com/static/Downloads/QScintilla2/QScintilla-gpl-${PV}.tar.gz"
+SRC_DIR="QScintilla-gpl-${PV}"
+
+abi=3
+PKG_NAMES="${PN} lib${PN}_${abi} lib${PN}-dev python-${PN}"
+PKG_HINTS="setup lib devel python"
+PKG_CONTENTS[0]=	# empty
+PKG_CONTENTS[1]="usr/bin/cyg${PN}-${abi}.dll ${QT4_PLUGINSDIR#/}/
+                 usr/share/doc/ ${QT4_DATADIR#/}/translations/"
+PKG_CONTENTS[2]="usr/include/ ${QT4_LIBDIR#/}/"
+PKG_CONTENTS[3]="${PYTHON_SITELIB#/} ${QT4_DATADIR#/}/qsci/ usr/share/sip/"
+
+src_compile() {
+	lndirs
+
+	for d in Qt4 designer-Qt4 example-Qt4
+	do
+		cd ${B}/${d}
+		cygqmake4
+		cygmake
+	done
+
+	cd ${B}/Python
+
+	${PYTHON} configure.py \
+		-d ${PYTHON_SITELIB}/PyQt4 \
+		-n ${B}/Qt4 \
+		-o ${B}/Qt4 \
+		-p 4 \
+		-v /usr/share/sip/qt4 ||
+		error "python configure.py failed"
+
+	cygmake -j1
+}
+
+src_install() {
+	for d in Qt4 designer-Qt4
+	do
+		cd ${B}/${d}
+		qt4_qmake_install
+	done
+
+	cd ${B}/Python
+	cyginstall
+}

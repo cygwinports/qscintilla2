@@ -12,17 +12,18 @@ allowing the use of proportional fonts, bold and italics, multiple
 foreground and background colours and multiple fonts. 
 
 Runtime requirements:
-  cygwin-1.5.25-11
-  qt3-3.3.8-4
+  cygwin-1.5.25-15
+  libQtCore4-4.4.0-1
+  libQtGui4-4.4.0-1
 (python-qscintilla2)
-  python-2.5.2-1
-  python-qt-3.17.4-1
+  python-2.5.2-2
+  python-qt4-4.4.2-1
   python-sip-4.7.6-1
 
 Build requirements:
 (besides corresponding devel packages)
-  binutils-20060817-1
-  cygport-0.3.11-1
+  binutils-20080523-2
+  cygport-0.3.13-1
   gcc-core-3.4.4-3
   gcc-g++-3.4.4-3
   make-3.81-1
@@ -43,110 +44,109 @@ Build instructions:
   cygport ./qscintilla2-2.2-X.cygport all
 
 This will create:
+  /usr/src/libqscintilla2_3-2.2-X.tar.bz2
+  /usr/src/libqscintilla2-dev-2.2-X.tar.bz2
   /usr/src/python-qscintilla2-2.2-X.tar.bz2
   /usr/src/qscintilla2-2.2-X-src.tar.bz2
   /usr/src/qscintilla2-2.2-X.tar.bz2
-  /usr/src/qscintilla2-devel-2.2-X.tar.bz2
 
 -------------------------------------------
 
 Files included in the binary packages:
 
-(qscintilla2)
+(libqscintilla2_3)
   /usr/bin/cygqscintilla2-3.dll
-  /usr/lib/qt3/plugins/designer/libqscintillaplugin.dll
+  /usr/lib/qt4/plugins/designer/cygqscintillaplugin.dll
   /usr/share/doc/qscintilla2-2.2/ChangeLog
   /usr/share/doc/qscintilla2-2.2/LICENSE
   /usr/share/doc/qscintilla2-2.2/NEWS
   /usr/share/doc/qscintilla2-2.2/README
-  /usr/share/qt3/translations/qscintilla_cs.qm
-  /usr/share/qt3/translations/qscintilla_cs.ts
-  /usr/share/qt3/translations/qscintilla_de.qm
-  /usr/share/qt3/translations/qscintilla_de.ts
-  /usr/share/qt3/translations/qscintilla_fr.qm
-  /usr/share/qt3/translations/qscintilla_fr.ts
-  /usr/share/qt3/translations/qscintilla_pt_br.qm
-  /usr/share/qt3/translations/qscintilla_pt_br.ts
-  /usr/share/qt3/translations/qscintilla_ru.qm
-  /usr/share/qt3/translations/qscintilla_ru.ts
+  /usr/share/qt4/translations/qscintilla_cs.qm
+  /usr/share/qt4/translations/qscintilla_de.qm
+  /usr/share/qt4/translations/qscintilla_fr.qm
+  /usr/share/qt4/translations/qscintilla_pt_br.qm
+  /usr/share/qt4/translations/qscintilla_ru.qm
 
 (qscintilla2-devel)
-  /usr/include/qt3/Qsci/qsciapis.h
-  /usr/include/qt3/Qsci/qscicommand.h
-  /usr/include/qt3/Qsci/qscicommandset.h
-  /usr/include/qt3/Qsci/qscidocument.h
-  /usr/include/qt3/Qsci/qsciglobal.h
-  /usr/include/qt3/Qsci/qscilexer.h
-  /usr/include/qt3/Qsci/qscilexerbash.h
-  /usr/include/qt3/Qsci/qscilexerbatch.h
-  /usr/include/qt3/Qsci/qscilexercmake.h
-  /usr/include/qt3/Qsci/qscilexercpp.h
-  /usr/include/qt3/Qsci/qscilexercsharp.h
-  /usr/include/qt3/Qsci/qscilexercss.h
-  /usr/include/qt3/Qsci/qscilexerd.h
-  /usr/include/qt3/Qsci/qscilexerdiff.h
-  /usr/include/qt3/Qsci/qscilexerhtml.h
-  /usr/include/qt3/Qsci/qscilexeridl.h
-  /usr/include/qt3/Qsci/qscilexerjava.h
-  /usr/include/qt3/Qsci/qscilexerjavascript.h
-  /usr/include/qt3/Qsci/qscilexerlua.h
-  /usr/include/qt3/Qsci/qscilexermakefile.h
-  /usr/include/qt3/Qsci/qscilexerperl.h
-  /usr/include/qt3/Qsci/qscilexerpov.h
-  /usr/include/qt3/Qsci/qscilexerproperties.h
-  /usr/include/qt3/Qsci/qscilexerpython.h
-  /usr/include/qt3/Qsci/qscilexerruby.h
-  /usr/include/qt3/Qsci/qscilexersql.h
-  /usr/include/qt3/Qsci/qscilexertex.h
-  /usr/include/qt3/Qsci/qscilexervhdl.h
-  /usr/include/qt3/Qsci/qscimacro.h
-  /usr/include/qt3/Qsci/qsciprinter.h
-  /usr/include/qt3/Qsci/qsciscintilla.h
-  /usr/include/qt3/Qsci/qsciscintillabase.h
-  /usr/lib/qt3/lib/libqscintilla2.dll.a
+  /usr/include/qt4/Qsci/qsciapis.h
+  /usr/include/qt4/Qsci/qscicommand.h
+  /usr/include/qt4/Qsci/qscicommandset.h
+  /usr/include/qt4/Qsci/qscidocument.h
+  /usr/include/qt4/Qsci/qsciglobal.h
+  /usr/include/qt4/Qsci/qscilexer.h
+  /usr/include/qt4/Qsci/qscilexerbash.h
+  /usr/include/qt4/Qsci/qscilexerbatch.h
+  /usr/include/qt4/Qsci/qscilexercmake.h
+  /usr/include/qt4/Qsci/qscilexercpp.h
+  /usr/include/qt4/Qsci/qscilexercsharp.h
+  /usr/include/qt4/Qsci/qscilexercss.h
+  /usr/include/qt4/Qsci/qscilexerd.h
+  /usr/include/qt4/Qsci/qscilexerdiff.h
+  /usr/include/qt4/Qsci/qscilexerhtml.h
+  /usr/include/qt4/Qsci/qscilexeridl.h
+  /usr/include/qt4/Qsci/qscilexerjava.h
+  /usr/include/qt4/Qsci/qscilexerjavascript.h
+  /usr/include/qt4/Qsci/qscilexerlua.h
+  /usr/include/qt4/Qsci/qscilexermakefile.h
+  /usr/include/qt4/Qsci/qscilexerperl.h
+  /usr/include/qt4/Qsci/qscilexerpov.h
+  /usr/include/qt4/Qsci/qscilexerproperties.h
+  /usr/include/qt4/Qsci/qscilexerpython.h
+  /usr/include/qt4/Qsci/qscilexerruby.h
+  /usr/include/qt4/Qsci/qscilexersql.h
+  /usr/include/qt4/Qsci/qscilexertex.h
+  /usr/include/qt4/Qsci/qscilexervhdl.h
+  /usr/include/qt4/Qsci/qscimacro.h
+  /usr/include/qt4/Qsci/qsciprinter.h
+  /usr/include/qt4/Qsci/qsciscintilla.h
+  /usr/include/qt4/Qsci/qsciscintillabase.h
+  /usr/lib/qt4/lib/libqscintilla2.dll.a
 
 (python-qscintilla2)
   /usr/lib/python2.5/site-packages/qsci.dll
-  /usr/lib/qt3/qsci/api/python/QScintilla2.api
-  /usr/share/sip/qsci/qsciapis.sip
-  /usr/share/sip/qsci/qscicommand.sip
-  /usr/share/sip/qsci/qscicommandset.sip
-  /usr/share/sip/qsci/qscidocument.sip
-  /usr/share/sip/qsci/qscilexer.sip
-  /usr/share/sip/qsci/qscilexerbash.sip
-  /usr/share/sip/qsci/qscilexerbatch.sip
-  /usr/share/sip/qsci/qscilexercmake.sip
-  /usr/share/sip/qsci/qscilexercpp.sip
-  /usr/share/sip/qsci/qscilexercsharp.sip
-  /usr/share/sip/qsci/qscilexercss.sip
-  /usr/share/sip/qsci/qscilexerd.sip
-  /usr/share/sip/qsci/qscilexerdiff.sip
-  /usr/share/sip/qsci/qscilexerhtml.sip
-  /usr/share/sip/qsci/qscilexeridl.sip
-  /usr/share/sip/qsci/qscilexerjava.sip
-  /usr/share/sip/qsci/qscilexerjavascript.sip
-  /usr/share/sip/qsci/qscilexerlua.sip
-  /usr/share/sip/qsci/qscilexermakefile.sip
-  /usr/share/sip/qsci/qscilexerperl.sip
-  /usr/share/sip/qsci/qscilexerpov.sip
-  /usr/share/sip/qsci/qscilexerproperties.sip
-  /usr/share/sip/qsci/qscilexerpython.sip
-  /usr/share/sip/qsci/qscilexerruby.sip
-  /usr/share/sip/qsci/qscilexersql.sip
-  /usr/share/sip/qsci/qscilexertex.sip
-  /usr/share/sip/qsci/qscilexervhdl.sip
-  /usr/share/sip/qsci/qscimacro.sip
-  /usr/share/sip/qsci/qscimod3.sip
-  /usr/share/sip/qsci/qscimod4.sip
-  /usr/share/sip/qsci/qscimodcommon.sip
-  /usr/share/sip/qsci/qsciprinter.sip
-  /usr/share/sip/qsci/qsciscintilla.sip
-  /usr/share/sip/qsci/qsciscintillabase3.sip
-  /usr/share/sip/qsci/qsciscintillabase4.sip
+  /usr/share/qt4/qsci/api/python/QScintilla2.api
+  /usr/share/sip/qt4/Qsci/qsciapis.sip
+  /usr/share/sip/qt4/Qsci/qscicommand.sip
+  /usr/share/sip/qt4/Qsci/qscicommandset.sip
+  /usr/share/sip/qt4/Qsci/qscidocument.sip
+  /usr/share/sip/qt4/Qsci/qscilexer.sip
+  /usr/share/sip/qt4/Qsci/qscilexerbash.sip
+  /usr/share/sip/qt4/Qsci/qscilexerbatch.sip
+  /usr/share/sip/qt4/Qsci/qscilexercmake.sip
+  /usr/share/sip/qt4/Qsci/qscilexercpp.sip
+  /usr/share/sip/qt4/Qsci/qscilexercsharp.sip
+  /usr/share/sip/qt4/Qsci/qscilexercss.sip
+  /usr/share/sip/qt4/Qsci/qscilexerd.sip
+  /usr/share/sip/qt4/Qsci/qscilexerdiff.sip
+  /usr/share/sip/qt4/Qsci/qscilexerhtml.sip
+  /usr/share/sip/qt4/Qsci/qscilexeridl.sip
+  /usr/share/sip/qt4/Qsci/qscilexerjava.sip
+  /usr/share/sip/qt4/Qsci/qscilexerjavascript.sip
+  /usr/share/sip/qt4/Qsci/qscilexerlua.sip
+  /usr/share/sip/qt4/Qsci/qscilexermakefile.sip
+  /usr/share/sip/qt4/Qsci/qscilexerperl.sip
+  /usr/share/sip/qt4/Qsci/qscilexerpov.sip
+  /usr/share/sip/qt4/Qsci/qscilexerproperties.sip
+  /usr/share/sip/qt4/Qsci/qscilexerpython.sip
+  /usr/share/sip/qt4/Qsci/qscilexerruby.sip
+  /usr/share/sip/qt4/Qsci/qscilexersql.sip
+  /usr/share/sip/qt4/Qsci/qscilexertex.sip
+  /usr/share/sip/qt4/Qsci/qscilexervhdl.sip
+  /usr/share/sip/qt4/Qsci/qscimacro.sip
+  /usr/share/sip/qt4/Qsci/qscimod3.sip
+  /usr/share/sip/qt4/Qsci/qscimod4.sip
+  /usr/share/sip/qt4/Qsci/qscimodcommon.sip
+  /usr/share/sip/qt4/Qsci/qsciprinter.sip
+  /usr/share/sip/qt4/Qsci/qsciscintilla.sip
+  /usr/share/sip/qt4/Qsci/qsciscintillabase3.sip
+  /usr/share/sip/qt4/Qsci/qsciscintillabase4.sip
 
 ------------------
 
 Port Notes:
+
+----- version 2.2-2 -----
+Rebuilt for Qt4. (Version 1 remains for Qt3 only.)
 
 ----- version 2.2-1 -----
 Version bump.

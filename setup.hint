@@ -1,6 +1,6 @@
-category: KDE
-requires: cygwin qt3
-sdesc: "Scintilla editor class for Qt3 (runtime library)"
+category: _obsolete
+requires: libqscintilla2_3
+sdesc: "Scintilla editor class for Qt4 (source)"
 ldesc: "QScintilla is a port to Qt of Neil Hodgson's Scintilla C++ 
 editor class.
 
