@@ -45,7 +45,7 @@ Build instructions:
 
 This will create:
   /usr/src/libqscintilla2_3-2.2-X.tar.bz2
-  /usr/src/libqscintilla2-dev-2.2-X.tar.bz2
+  /usr/src/libqscintilla2-devel-2.2-X.tar.bz2
   /usr/src/python-qscintilla2-2.2-X.tar.bz2
   /usr/src/qscintilla2-2.2-X-src.tar.bz2
   /usr/src/qscintilla2-2.2-X.tar.bz2
@@ -56,7 +56,6 @@ Files included in the binary packages:
 
 (libqscintilla2_3)
   /usr/bin/cygqscintilla2-3.dll
-  /usr/lib/qt4/plugins/designer/cygqscintillaplugin.dll
   /usr/share/doc/qscintilla2-2.2/ChangeLog
   /usr/share/doc/qscintilla2-2.2/LICENSE
   /usr/share/doc/qscintilla2-2.2/NEWS
@@ -101,45 +100,46 @@ Files included in the binary packages:
   /usr/include/qt4/Qsci/qsciscintilla.h
   /usr/include/qt4/Qsci/qsciscintillabase.h
   /usr/lib/qt4/lib/libqscintilla2.dll.a
+  /usr/lib/qt4/plugins/designer/cygqscintillaplugin.dll
 
 (python-qscintilla2)
   /usr/lib/python2.5/site-packages/qsci.dll
   /usr/share/qt4/qsci/api/python/QScintilla2.api
-  /usr/share/sip/qt4/Qsci/qsciapis.sip
-  /usr/share/sip/qt4/Qsci/qscicommand.sip
-  /usr/share/sip/qt4/Qsci/qscicommandset.sip
-  /usr/share/sip/qt4/Qsci/qscidocument.sip
-  /usr/share/sip/qt4/Qsci/qscilexer.sip
-  /usr/share/sip/qt4/Qsci/qscilexerbash.sip
-  /usr/share/sip/qt4/Qsci/qscilexerbatch.sip
-  /usr/share/sip/qt4/Qsci/qscilexercmake.sip
-  /usr/share/sip/qt4/Qsci/qscilexercpp.sip
-  /usr/share/sip/qt4/Qsci/qscilexercsharp.sip
-  /usr/share/sip/qt4/Qsci/qscilexercss.sip
-  /usr/share/sip/qt4/Qsci/qscilexerd.sip
-  /usr/share/sip/qt4/Qsci/qscilexerdiff.sip
-  /usr/share/sip/qt4/Qsci/qscilexerhtml.sip
-  /usr/share/sip/qt4/Qsci/qscilexeridl.sip
-  /usr/share/sip/qt4/Qsci/qscilexerjava.sip
-  /usr/share/sip/qt4/Qsci/qscilexerjavascript.sip
-  /usr/share/sip/qt4/Qsci/qscilexerlua.sip
-  /usr/share/sip/qt4/Qsci/qscilexermakefile.sip
-  /usr/share/sip/qt4/Qsci/qscilexerperl.sip
-  /usr/share/sip/qt4/Qsci/qscilexerpov.sip
-  /usr/share/sip/qt4/Qsci/qscilexerproperties.sip
-  /usr/share/sip/qt4/Qsci/qscilexerpython.sip
-  /usr/share/sip/qt4/Qsci/qscilexerruby.sip
-  /usr/share/sip/qt4/Qsci/qscilexersql.sip
-  /usr/share/sip/qt4/Qsci/qscilexertex.sip
-  /usr/share/sip/qt4/Qsci/qscilexervhdl.sip
-  /usr/share/sip/qt4/Qsci/qscimacro.sip
-  /usr/share/sip/qt4/Qsci/qscimod3.sip
-  /usr/share/sip/qt4/Qsci/qscimod4.sip
-  /usr/share/sip/qt4/Qsci/qscimodcommon.sip
-  /usr/share/sip/qt4/Qsci/qsciprinter.sip
-  /usr/share/sip/qt4/Qsci/qsciscintilla.sip
-  /usr/share/sip/qt4/Qsci/qsciscintillabase3.sip
-  /usr/share/sip/qt4/Qsci/qsciscintillabase4.sip
+  /usr/share/sip/PyQt4/Qsci/qsciapis.sip
+  /usr/share/sip/PyQt4/Qsci/qscicommand.sip
+  /usr/share/sip/PyQt4/Qsci/qscicommandset.sip
+  /usr/share/sip/PyQt4/Qsci/qscidocument.sip
+  /usr/share/sip/PyQt4/Qsci/qscilexer.sip
+  /usr/share/sip/PyQt4/Qsci/qscilexerbash.sip
+  /usr/share/sip/PyQt4/Qsci/qscilexerbatch.sip
+  /usr/share/sip/PyQt4/Qsci/qscilexercmake.sip
+  /usr/share/sip/PyQt4/Qsci/qscilexercpp.sip
+  /usr/share/sip/PyQt4/Qsci/qscilexercsharp.sip
+  /usr/share/sip/PyQt4/Qsci/qscilexercss.sip
+  /usr/share/sip/PyQt4/Qsci/qscilexerd.sip
+  /usr/share/sip/PyQt4/Qsci/qscilexerdiff.sip
+  /usr/share/sip/PyQt4/Qsci/qscilexerhtml.sip
+  /usr/share/sip/PyQt4/Qsci/qscilexeridl.sip
+  /usr/share/sip/PyQt4/Qsci/qscilexerjava.sip
+  /usr/share/sip/PyQt4/Qsci/qscilexerjavascript.sip
+  /usr/share/sip/PyQt4/Qsci/qscilexerlua.sip
+  /usr/share/sip/PyQt4/Qsci/qscilexermakefile.sip
+  /usr/share/sip/PyQt4/Qsci/qscilexerperl.sip
+  /usr/share/sip/PyQt4/Qsci/qscilexerpov.sip
+  /usr/share/sip/PyQt4/Qsci/qscilexerproperties.sip
+  /usr/share/sip/PyQt4/Qsci/qscilexerpython.sip
+  /usr/share/sip/PyQt4/Qsci/qscilexerruby.sip
+  /usr/share/sip/PyQt4/Qsci/qscilexersql.sip
+  /usr/share/sip/PyQt4/Qsci/qscilexertex.sip
+  /usr/share/sip/PyQt4/Qsci/qscilexervhdl.sip
+  /usr/share/sip/PyQt4/Qsci/qscimacro.sip
+  /usr/share/sip/PyQt4/Qsci/qscimod3.sip
+  /usr/share/sip/PyQt4/Qsci/qscimod4.sip
+  /usr/share/sip/PyQt4/Qsci/qscimodcommon.sip
+  /usr/share/sip/PyQt4/Qsci/qsciprinter.sip
+  /usr/share/sip/PyQt4/Qsci/qsciscintilla.sip
+  /usr/share/sip/PyQt4/Qsci/qsciscintillabase3.sip
+  /usr/share/sip/PyQt4/Qsci/qsciscintillabase4.sip
 
 ------------------
 
