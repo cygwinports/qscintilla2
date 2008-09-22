@@ -13,17 +13,17 @@ foreground and background colours and multiple fonts.
 
 Runtime requirements:
   cygwin-1.5.25-15
-  libQtCore4-4.4.0-1
-  libQtGui4-4.4.0-1
+  libQtCore4-4.4.1-1
+  libQtGui4-4.4.1-1
 (python-qscintilla2)
-  python-2.5.2-2
-  python-qt4-4.4.2-1
-  python-sip-4.7.6-1
+  python-2.5.2-3
+  python-qt4-4.4.3-1
+  python-sip-4.7.7-1
 
 Build requirements:
 (besides corresponding devel packages)
-  binutils-20080523-2
-  cygport-0.3.13-1
+  binutils-20080624-2
+  cygport-0.4.0-1
   gcc-core-3.4.4-3
   gcc-g++-3.4.4-3
   make-3.81-1
@@ -37,29 +37,29 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack qscintilla2-2.2-X-src.tar.bz2
+  unpack qscintilla2-2.3-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./qscintilla2-2.2-X.cygport all
+  cygport ./qscintilla2-2.3-X.cygport all
 
 This will create:
-  /usr/src/libqscintilla2_3-2.2-X.tar.bz2
-  /usr/src/libqscintilla2-devel-2.2-X.tar.bz2
-  /usr/src/python-qscintilla2-2.2-X.tar.bz2
-  /usr/src/qscintilla2-2.2-X-src.tar.bz2
-  /usr/src/qscintilla2-2.2-X.tar.bz2
+  /usr/src/libqscintilla2_4-2.3-X.tar.bz2
+  /usr/src/libqscintilla2-devel-2.3-X.tar.bz2
+  /usr/src/python-qscintilla2-2.3-X.tar.bz2
+  /usr/src/qscintilla2-2.3-X-src.tar.bz2
+  /usr/src/qscintilla2-2.3-X.tar.bz2
 
 -------------------------------------------
 
 Files included in the binary packages:
 
-(libqscintilla2_3)
-  /usr/bin/cygqscintilla2-3.dll
-  /usr/share/doc/qscintilla2-2.2/ChangeLog
-  /usr/share/doc/qscintilla2-2.2/LICENSE
-  /usr/share/doc/qscintilla2-2.2/NEWS
-  /usr/share/doc/qscintilla2-2.2/README
+(libqscintilla2_4)
+  /usr/bin/cygqscintilla2-4.dll
+  /usr/share/doc/qscintilla2-2.3/ChangeLog
+  /usr/share/doc/qscintilla2-2.3/LICENSE
+  /usr/share/doc/qscintilla2-2.3/NEWS
+  /usr/share/doc/qscintilla2-2.3/README
   /usr/share/qt4/translations/qscintilla_cs.qm
   /usr/share/qt4/translations/qscintilla_de.qm
   /usr/share/qt4/translations/qscintilla_fr.qm
@@ -67,6 +67,7 @@ Files included in the binary packages:
   /usr/share/qt4/translations/qscintilla_ru.qm
 
 (qscintilla2-devel)
+  /usr/include/qt4/Qsci/qsciabstractapis.h
   /usr/include/qt4/Qsci/qsciapis.h
   /usr/include/qt4/Qsci/qscicommand.h
   /usr/include/qt4/Qsci/qscicommandset.h
@@ -81,20 +82,27 @@ Files included in the binary packages:
   /usr/include/qt4/Qsci/qscilexercss.h
   /usr/include/qt4/Qsci/qscilexerd.h
   /usr/include/qt4/Qsci/qscilexerdiff.h
+  /usr/include/qt4/Qsci/qscilexerfortran.h
+  /usr/include/qt4/Qsci/qscilexerfortran77.h
   /usr/include/qt4/Qsci/qscilexerhtml.h
   /usr/include/qt4/Qsci/qscilexeridl.h
   /usr/include/qt4/Qsci/qscilexerjava.h
   /usr/include/qt4/Qsci/qscilexerjavascript.h
   /usr/include/qt4/Qsci/qscilexerlua.h
   /usr/include/qt4/Qsci/qscilexermakefile.h
+  /usr/include/qt4/Qsci/qscilexerpascal.h
   /usr/include/qt4/Qsci/qscilexerperl.h
+  /usr/include/qt4/Qsci/qscilexerpostscript.h
   /usr/include/qt4/Qsci/qscilexerpov.h
   /usr/include/qt4/Qsci/qscilexerproperties.h
   /usr/include/qt4/Qsci/qscilexerpython.h
   /usr/include/qt4/Qsci/qscilexerruby.h
   /usr/include/qt4/Qsci/qscilexersql.h
+  /usr/include/qt4/Qsci/qscilexertcl.h
   /usr/include/qt4/Qsci/qscilexertex.h
   /usr/include/qt4/Qsci/qscilexervhdl.h
+  /usr/include/qt4/Qsci/qscilexerxml.h
+  /usr/include/qt4/Qsci/qscilexeryaml.h
   /usr/include/qt4/Qsci/qscimacro.h
   /usr/include/qt4/Qsci/qsciprinter.h
   /usr/include/qt4/Qsci/qsciscintilla.h
@@ -103,8 +111,12 @@ Files included in the binary packages:
   /usr/lib/qt4/plugins/designer/cygqscintillaplugin.dll
 
 (python-qscintilla2)
-  /usr/lib/python2.5/site-packages/qsci.dll
+  /usr/lib/python2.5/site-packages/PyQt4/Qsci.dll
+  /usr/share/qt4/qsci/api/python/Python-2.4.api
+  /usr/share/qt4/qsci/api/python/Python-2.5.api
+  /usr/share/qt4/qsci/api/python/Python-2.6.api
   /usr/share/qt4/qsci/api/python/QScintilla2.api
+  /usr/share/sip/PyQt4/Qsci/qsciabstractapis.sip
   /usr/share/sip/PyQt4/Qsci/qsciapis.sip
   /usr/share/sip/PyQt4/Qsci/qscicommand.sip
   /usr/share/sip/PyQt4/Qsci/qscicommandset.sip
@@ -118,20 +130,27 @@ Files included in the binary packages:
   /usr/share/sip/PyQt4/Qsci/qscilexercss.sip
   /usr/share/sip/PyQt4/Qsci/qscilexerd.sip
   /usr/share/sip/PyQt4/Qsci/qscilexerdiff.sip
+  /usr/share/sip/PyQt4/Qsci/qscilexerfortran.sip
+  /usr/share/sip/PyQt4/Qsci/qscilexerfortran77.sip
   /usr/share/sip/PyQt4/Qsci/qscilexerhtml.sip
   /usr/share/sip/PyQt4/Qsci/qscilexeridl.sip
   /usr/share/sip/PyQt4/Qsci/qscilexerjava.sip
   /usr/share/sip/PyQt4/Qsci/qscilexerjavascript.sip
   /usr/share/sip/PyQt4/Qsci/qscilexerlua.sip
   /usr/share/sip/PyQt4/Qsci/qscilexermakefile.sip
+  /usr/share/sip/PyQt4/Qsci/qscilexerpascal.sip
   /usr/share/sip/PyQt4/Qsci/qscilexerperl.sip
+  /usr/share/sip/PyQt4/Qsci/qscilexerpostscript.sip
   /usr/share/sip/PyQt4/Qsci/qscilexerpov.sip
   /usr/share/sip/PyQt4/Qsci/qscilexerproperties.sip
   /usr/share/sip/PyQt4/Qsci/qscilexerpython.sip
   /usr/share/sip/PyQt4/Qsci/qscilexerruby.sip
   /usr/share/sip/PyQt4/Qsci/qscilexersql.sip
+  /usr/share/sip/PyQt4/Qsci/qscilexertcl.sip
   /usr/share/sip/PyQt4/Qsci/qscilexertex.sip
   /usr/share/sip/PyQt4/Qsci/qscilexervhdl.sip
+  /usr/share/sip/PyQt4/Qsci/qscilexerxml.sip
+  /usr/share/sip/PyQt4/Qsci/qscilexeryaml.sip
   /usr/share/sip/PyQt4/Qsci/qscimacro.sip
   /usr/share/sip/PyQt4/Qsci/qscimod3.sip
   /usr/share/sip/PyQt4/Qsci/qscimod4.sip
@@ -144,6 +163,9 @@ Files included in the binary packages:
 ------------------
 
 Port Notes:
+
+----- version 2.3-1 -----
+Version bump.
 
 ----- version 2.2-2 -----
 Rebuilt for Qt4. (Version 1 remains for Qt3 only.)

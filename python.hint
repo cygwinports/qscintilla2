@@ -1,5 +1,5 @@
 category: KDE Python
-requires: cygwin libqscintilla2_3 python python-qt4 python-sip
+requires: cygwin libqscintilla2_4 python python-qt4 python-sip
 external-source: qscintilla2
 sdesc: "Scintilla editor class for Qt4 (Python bindings)"
 ldesc: "QScintilla is a port to Qt of Neil Hodgson's Scintilla C++ 
