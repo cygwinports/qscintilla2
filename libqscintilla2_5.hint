@@ -1,7 +1,7 @@
 category: KDE
-requires: cygwin libqscintilla2_4 libQtCore4-devel libQtGui4-devel
+requires: cygwin libQtCore4 libQtGui4 libqscintilla2-common
 external-source: qscintilla2
-sdesc: "Scintilla editor class for Qt4 (development files)"
+sdesc: "Scintilla editor class for Qt4 (runtime library)"
 ldesc: "QScintilla is a port to Qt of Neil Hodgson's Scintilla C++ 
 editor class.
 

@@ -1,6 +1,6 @@
-category: _obsolete
-requires: libqscintilla2_4
-sdesc: "Scintilla editor class for Qt4 (source)"
+category: KDE
+external-source: qscintilla2
+sdesc: "Scintilla editor class for Qt4 (runtime data)"
 ldesc: "QScintilla is a port to Qt of Neil Hodgson's Scintilla C++ 
 editor class.
 

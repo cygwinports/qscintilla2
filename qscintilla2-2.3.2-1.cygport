@@ -7,14 +7,11 @@ PATCH_URI="2.2-build.patch"
 
 SRC_DIR="QScintilla-gpl-${PV}"
 
-abi=4
-PKG_NAMES="${PN} lib${PN}_${abi} lib${PN}-devel python-${PN}"
-PKG_HINTS="setup lib devel python"
-PKG_CONTENTS[0]=	# empty
-PKG_CONTENTS[1]="usr/bin/cyg${PN}-${abi}.dll
-                 usr/share/doc/ ${QT4_DATADIR#/}/translations/"
-PKG_CONTENTS[2]="usr/include/ ${QT4_LIBDIR#/}/ ${QT4_PLUGINSDIR#/}/"
-PKG_CONTENTS[3]="${PYTHON_SITELIB#/} ${QT4_DATADIR#/}/qsci/ usr/share/sip/"
+PKG_NAMES="${PN} lib${PN}_5 lib${PN}-common lib${PN}-devel python-${PN}"
+libqscintilla2_5_CONTENTS="usr/bin/cyg${PN}-5.dll"
+libqscintilla2_common_CONTENTS="usr/share/doc/ ${QT4_DATADIR#/}/translations/"
+libqscintilla2_devel_CONTENTS="usr/include/ ${QT4_LIBDIR#/}/ ${QT4_PLUGINSDIR#/}/"
+python_qscintilla2_CONTENTS="${PYTHON_SITELIB#/} ${QT4_DATADIR#/}/qsci/ usr/share/sip/"
 
 src_compile() {
 	lndirs
