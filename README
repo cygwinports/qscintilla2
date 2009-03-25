@@ -12,21 +12,22 @@ allowing the use of proportional fonts, bold and italics, multiple
 foreground and background colours and multiple fonts. 
 
 Runtime requirements:
-  cygwin-1.5.25-15
-  libQtCore4-4.4.2-1
-  libQtGui4-4.4.2-1
+  cygwin-1.7.0-44
+  libgcc1-4.3.2-2
+  libQtCore4-4.4.3-10
+  libQtGui4-4.4.3-10
 (python-qscintilla2)
-  python-2.5.2-4
-  python-qt4-4.4.4-1
-  python-sip-4.7.9-1
+  python-2.5.4-10
+  python-pyqt4-4.4.4-10
+  python-sip-4.7.9-10
 
 Build requirements:
 (besides corresponding devel packages)
   binutils-20080624-2
-  cygport-0.4.3-1
-  gcc-core-3.4.4-3
-  gcc-g++-3.4.4-3
-  make-3.81-1
+  cygport-0.9.6-1
+  gcc4-core-4.3.2-2
+  gcc4-g++-4.3.2-2
+  make-3.81-2
 
 Canonical homepage:
   http://www.riverbankcomputing.com/software/qscintilla/
@@ -58,10 +59,10 @@ Files included in the binary packages:
   /usr/bin/cygqscintilla2-5.dll
 
 (libqscintilla2-common)
-  /usr/share/doc/qscintilla2-2.3.2/ChangeLog
-  /usr/share/doc/qscintilla2-2.3.2/LICENSE
-  /usr/share/doc/qscintilla2-2.3.2/NEWS
-  /usr/share/doc/qscintilla2-2.3.2/README
+  /usr/share/doc/qscintilla2/ChangeLog
+  /usr/share/doc/qscintilla2/LICENSE
+  /usr/share/doc/qscintilla2/NEWS
+  /usr/share/doc/qscintilla2/README
   /usr/share/qt4/translations/qscintilla_cs.qm
   /usr/share/qt4/translations/qscintilla_de.qm
   /usr/share/qt4/translations/qscintilla_fr.qm
@@ -166,20 +167,8 @@ Files included in the binary packages:
 
 Port Notes:
 
------ version 2.3.2-1 -----
-Version bump.
-
------ version 2.3-1 -----
-Version bump.
-
------ version 2.2-2 -----
-Rebuilt for Qt4. (Version 1 remains for Qt3 only.)
-
------ version 2.2-1 -----
-Version bump.
-
------ version 2.1-1 -----
-Initial release of 2.x API for Cygwin.
+----- version 2.3.2-10 -----
+Initial release for Cygwin 1.7.
 
 
 Cygwin port maintained by:
