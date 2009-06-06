@@ -12,14 +12,14 @@ allowing the use of proportional fonts, bold and italics, multiple
 foreground and background colours and multiple fonts. 
 
 Runtime requirements:
-  cygwin-1.7.0-44
+  cygwin-1.7.0-48
   libgcc1-4.3.2-2
-  libQtCore4-4.4.3-10
-  libQtGui4-4.4.3-10
+  libQtCore4-4.5.1-1
+  libQtGui4-4.5.1-1
 (python-qscintilla2)
   python-2.5.4-10
-  python-pyqt4-4.4.4-10
-  python-sip-4.7.9-10
+  python-pyqt4-4.5-1
+  python-sip-4.8-1
 
 Build requirements:
 (besides corresponding devel packages)
@@ -38,18 +38,18 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack qscintilla2-2.3.2-X-src.tar.bz2
+  unpack qscintilla2-2.4-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./qscintilla2-2.3.2-X.cygport all
+  cygport ./qscintilla2-2.4-X.cygport all
 
 This will create:
-  /usr/src/libqscintilla2_5-2.3.2-X.tar.bz2
-  /usr/src/libqscintilla2-common-2.3.2-X.tar.bz2
-  /usr/src/libqscintilla2-devel-2.3.2-X.tar.bz2
-  /usr/src/python-qscintilla2-2.3.2-X.tar.bz2
-  /usr/src/qscintilla2-2.3.2-X-src.tar.bz2
+  /usr/src/libqscintilla2_5-2.4-X.tar.bz2
+  /usr/src/libqscintilla2-common-2.4-X.tar.bz2
+  /usr/src/libqscintilla2-devel-2.4-X.tar.bz2
+  /usr/src/python-qscintilla2-2.4-X.tar.bz2
+  /usr/src/qscintilla2-2.4-X-src.tar.bz2
 
 -------------------------------------------
 
@@ -166,6 +166,9 @@ Files included in the binary packages:
 ------------------
 
 Port Notes:
+
+----- version 2.4-1 -----
+Version bump for Qt 4.5.
 
 ----- version 2.3.2-10 -----
 Initial release for Cygwin 1.7.
