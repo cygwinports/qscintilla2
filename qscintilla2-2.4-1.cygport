@@ -9,9 +9,9 @@ SRC_DIR="QScintilla-gpl-${PV}"
 
 PKG_NAMES="${PN} lib${PN}_5 lib${PN}-common lib${PN}-devel python-${PN}"
 libqscintilla2_5_CONTENTS="usr/bin/cyg${PN}-5.dll"
-libqscintilla2_common_CONTENTS="usr/share/doc/ ${QT4_DATADIR#/}/translations/"
+libqscintilla2_common_CONTENTS="usr/share/doc/ ${QT4_DATADIR#/}/"
 libqscintilla2_devel_CONTENTS="usr/include/ ${QT4_LIBDIR#/}/ ${QT4_PLUGINSDIR#/}/"
-python_qscintilla2_CONTENTS="${PYTHON_SITELIB#/} ${QT4_DATADIR#/}/qsci/ usr/share/sip/"
+python_qscintilla2_CONTENTS="${PYTHON_SITELIB#/} usr/share/sip/"
 
 src_compile() {
 	lndirs

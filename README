@@ -12,14 +12,14 @@ allowing the use of proportional fonts, bold and italics, multiple
 foreground and background colours and multiple fonts. 
 
 Runtime requirements:
-  cygwin-1.7.0-48
+  cygwin-1.7.0-49
   libgcc1-4.3.2-2
   libQtCore4-4.5.1-1
   libQtGui4-4.5.1-1
 (python-qscintilla2)
   python-2.5.4-10
-  python-pyqt4-4.5-1
-  python-sip-4.8-1
+  python-pyqt4-4.5.1-1
+  python-sip-4.8.1-1
 
 Build requirements:
 (besides corresponding devel packages)
@@ -63,6 +63,10 @@ Files included in the binary packages:
   /usr/share/doc/qscintilla2/LICENSE
   /usr/share/doc/qscintilla2/NEWS
   /usr/share/doc/qscintilla2/README
+  /usr/share/qt4/qsci/api/python/Python-2.4.api
+  /usr/share/qt4/qsci/api/python/Python-2.5.api
+  /usr/share/qt4/qsci/api/python/Python-2.6.api
+  /usr/share/qt4/qsci/api/python/QScintilla2.api
   /usr/share/qt4/translations/qscintilla_cs.qm
   /usr/share/qt4/translations/qscintilla_de.qm
   /usr/share/qt4/translations/qscintilla_fr.qm
@@ -115,10 +119,6 @@ Files included in the binary packages:
 
 (python-qscintilla2)
   /usr/lib/python2.5/site-packages/PyQt4/Qsci.dll
-  /usr/share/qt4/qsci/api/python/Python-2.4.api
-  /usr/share/qt4/qsci/api/python/Python-2.5.api
-  /usr/share/qt4/qsci/api/python/Python-2.6.api
-  /usr/share/qt4/qsci/api/python/QScintilla2.api
   /usr/share/sip/PyQt4/Qsci/qsciabstractapis.sip
   /usr/share/sip/PyQt4/Qsci/qsciapis.sip
   /usr/share/sip/PyQt4/Qsci/qscicommand.sip
