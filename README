@@ -18,9 +18,9 @@ Runtime requirements:
   libQtGui4-4.6.2-1
   libstdc++6-4.3.4-3
 (python-qscintilla2)
-  python-2.5.5-10
-  python-pyqt4-4.7.3-1
-  python-sip-4.10.2-1
+  python-2.6.5-1
+  python-pyqt4-4.7.3-2
+  python-sip-4.10.2-2
 
 Build requirements:
 (besides corresponding devel packages)
@@ -55,6 +55,9 @@ This will create:
 -------------------------------------------
 
 Port Notes:
+
+----- version 2.4.3-2 -----
+Rebuilt bindings for Python 2.6.
 
 ----- version 2.4.3-1 -----
 Version bump for Qt 4.6.
