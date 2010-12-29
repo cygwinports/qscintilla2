@@ -28,6 +28,7 @@ src_compile() {
 
 	cd ${B}/Python
 	${PYTHON} configure.py \
+		-c \
 		-d ${PYTHON_SITELIB}/PyQt4 \
 		-n ${B}/Qt4 \
 		-o ${B}/Qt4 \
@@ -40,6 +41,7 @@ src_compile() {
 	lndirs ${S}/Python ${B}/Python3
 	cd ${B}/Python3
 	${PYTHON3} configure.py \
+		-c \
 		-d ${PYTHON3_SITELIB}/PyQt4 \
 		-n ${B}/Qt4 \
 		-o ${B}/Qt4 \
