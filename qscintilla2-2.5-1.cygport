@@ -7,9 +7,9 @@ PATCH_URI="2.2-build.patch"
 
 SRC_DIR="QScintilla-gpl-${PV}"
 
-PKG_NAMES="lib${PN}_5 lib${PN}-common lib${PN}-devel
+PKG_NAMES="lib${PN}_6 lib${PN}-common lib${PN}-devel
            python-pyqt4-qsci python3-pyqt4-qsci python-pyqt4-qsci-devel"
-libqscintilla2_5_CONTENTS="usr/bin/cyg${PN}-5.dll"
+libqscintilla2_6_CONTENTS="usr/bin/cyg${PN}-6.dll"
 libqscintilla2_common_CONTENTS="usr/share/doc/ ${QT4_DATADIR#/}/"
 libqscintilla2_devel_CONTENTS="usr/include/ ${QT4_LIBDIR#/}/ ${QT4_PLUGINSDIR#/}/"
 python_pyqt4_qsci_CONTENTS="${PYTHON_SITELIB#/}"

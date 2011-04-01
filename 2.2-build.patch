@@ -13,19 +13,19 @@
  	header.files = Qsci/qsci*.h
 --- origsrc/QScintilla-gpl-2.2/designer-Qt4/designer.pro	2007-12-30 10:16:28.000000000 -0600
 +++ src/QScintilla-gpl-2.2/designer-Qt4/designer.pro	2008-07-18 02:54:13.031250000 -0500
-@@ -12,4 +12,5 @@
+@@ -12,4 +12,6 @@
  target.path = $$[QT_INSTALL_PLUGINS]/designer
  INSTALLS += target
  
--LIBS += -lqscintilla2
 +INCLUDEPATH += ../Qt4
-+LIBS += -L../Qt4 -lqscintilla2
++QMAKE_LIBDIR += ../Qt4
+ LIBS += -lqscintilla2
 --- origsrc/QScintilla-gpl-2.2/example-Qt4/application.pro	2007-12-30 10:16:27.000000000 -0600
 +++ src/QScintilla-gpl-2.2/example-Qt4/application.pro	2008-07-18 02:54:13.046875000 -0500
-@@ -3,4 +3,5 @@
+@@ -3,4 +3,6 @@
  SOURCES       = main.cpp \
                  mainwindow.cpp
  RESOURCES     = application.qrc
--LIBS         += -lqscintilla2
-+INCLUDEPATH  += ../Qt4
-+LIBS         += -L../Qt4 -lqscintilla2
++INCLUDEPATH += ../Qt4
++QMAKE_LIBDIR += ../Qt4
+ LIBS         += -lqscintilla2
