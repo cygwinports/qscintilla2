@@ -15,7 +15,7 @@ DEPEND="pkgconfig(QtGui) pkgconfig(QtDesigner)"
 src_compile() {
 	lndirs
 
-	for d in Qt4 designer-Qt4 example-Qt4
+	for d in Qt4Qt5 designer-Qt4 example-Qt4Qt5
 	do
 		cd ${B}/${d}
 		cygqmake4
@@ -24,7 +24,7 @@ src_compile() {
 }
 
 src_install() {
-	for d in Qt4 designer-Qt4
+	for d in Qt4Qt5 designer-Qt4
 	do
 		cd ${B}/${d}
 		qt4_qmake_install
