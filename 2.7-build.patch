@@ -1,0 +1,9 @@
+--- origsrc/QScintilla-gpl-2.7/designer-Qt4/designer.pro	2011-06-13 07:16:23.000000000 -0500
++++ src/QScintilla-gpl-2.7/designer-Qt4/designer.pro	2012-12-10 20:44:25.358392700 -0600
+@@ -12,4 +12,6 @@ SOURCES = qscintillaplugin.cpp
+ target.path = $$[QT_INSTALL_PLUGINS]/designer
+ INSTALLS += target
+ 
++INCLUDEPATH += ../Qt4Qt5
++QMAKE_LIBDIR += ../Qt4Qt5
+ LIBS += -lqscintilla2
