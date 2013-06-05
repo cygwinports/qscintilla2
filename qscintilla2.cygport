@@ -61,6 +61,8 @@ src_compile() {
 		-o ${B}/Qt4Qt5 \
 		-p 4 \
 		|| error "python3 configure.py failed"
+
+	cygmake -j1
 }
 
 src_install() {

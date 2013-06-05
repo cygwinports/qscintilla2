@@ -7,3 +7,12 @@
 +INCLUDEPATH += ../Qt4Qt5
 +QMAKE_LIBDIR += ../Qt4Qt5
  LIBS += -lqscintilla2
+--- origsrc/QScintilla-gpl-2.7/example-Qt4Qt5/application.pro	2012-11-20 10:26:39.000000000 -0600
++++ src/QScintilla-gpl-2.7/example-Qt4Qt5/application.pro	2013-06-04 23:26:30.026389400 -0500
+@@ -8,4 +8,6 @@ HEADERS       = mainwindow.h
+ SOURCES       = main.cpp \
+                 mainwindow.cpp
+ RESOURCES     = application.qrc
++INCLUDEPATH  += ../Qt4Qt5
++QMAKE_LIBDIR += ../Qt4Qt5
+ LIBS         += -L$$[QT_INSTALL_LIBS] -lqscintilla2
