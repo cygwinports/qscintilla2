@@ -1,9 +1,9 @@
 inherit python python3 qt4-qmake
 
 NAME="qscintilla2"
-VERSION=2.7
-RELEASE=2
-CATEGORY="X11"
+VERSION=2.7.2
+RELEASE=1
+CATEGORY="Libs"
 SUMMARY="Scintilla editor class for Qt4"
 DESCRIPTION="QScintilla is a port to Qt of Neil Hodgson's Scintilla C++ editor
 class.  As well as features found in standard text editing components,
@@ -16,13 +16,16 @@ bold and italics, multiple foreground/background colours and multiple fonts."
 HOMEPAGE="http://www.riverbankcomputing.com/software/qscintilla/"
 SRC_URI="mirror://sourceforge/pyqt/QScintilla-gpl-${VERSION}.tar.gz"
 SRC_DIR="QScintilla-gpl-${VERSION}"
-PATCH_URI="2.7-build.patch"
+PATCH_URI="
+	2.7.2-build-intree.patch
+	2.7.2-python-cygwin.patch
+"
 
 PKG_NAMES="lib${NAME}_9 lib${NAME}-common lib${NAME}-devel python-pyqt4-qsci python3-pyqt4-qsci"
 libqscintilla2_9_REQUIRES="libqscintilla2-common"
 libqscintilla2_9_CONTENTS="usr/bin/cyg${NAME}-9.dll"
 libqscintilla2_common_CONTENTS="usr/share/doc/ ${QT4_DATADIR#/}/"
-libqscintilla2_devel_CONTENTS="usr/include/ ${QT4_LIBDIR#/}/ ${QT4_PLUGINSDIR#/}/"
+libqscintilla2_devel_CONTENTS="usr/include/ usr/lib/lib* ${QT4_PLUGINSDIR#/}/"
 python_pyqt4_qsci_REQUIRES="python-pyqt4"
 python_pyqt4_qsci_CONTENTS="${PYTHON_SITELIB#/} usr/share/python-sip/"
 python3_pyqt4_qsci_REQUIRES="python3-pyqt4"
@@ -33,7 +36,7 @@ DEPEND="pkgconfig(QtGui) pkgconfig(QtDesigner)"
 src_compile() {
 	lndirs
 
-	for d in Qt4Qt5 designer-Qt4 example-Qt4Qt5
+	for d in Qt4Qt5 designer-Qt4Qt5 example-Qt4Qt5
 	do
 		cd ${B}/${d}
 		cygqmake4
@@ -42,11 +45,14 @@ src_compile() {
 
 	cd ${B}/Python
 	${PYTHON} configure.py \
-		-c \
-		-d ${PYTHON_SITELIB}/PyQt4 \
-		-n ${B}/Qt4Qt5 \
-		-o ${B}/Qt4Qt5 \
-		-p 4 \
+		--concatenate \
+		--destdir ${PYTHON_SITELIB}/PyQt4 \
+		--qsci-incdir ${B}/Qt4Qt5 \
+		--qsci-libdir ${B}/Qt4Qt5 \
+		--pyqt PyQt4 \
+		--sip ${PYTHON_SITELIB}/sip \
+		--pyqt-sipdir /usr/share/python-sip/PyQt4 \
+		--qsci-sipdir /usr/share/python-sip/PyQt4 \
 		|| error "python configure.py failed"
 
 	cygmake -j1
@@ -55,26 +61,23 @@ src_compile() {
 	lndirs ${S}/Python ${B}/Python3
 	cd ${B}/Python3
 	${PYTHON3} configure.py \
-		-c \
-		-d ${PYTHON3_SITELIB}/PyQt4 \
-		-n ${B}/Qt4Qt5 \
-		-o ${B}/Qt4Qt5 \
-		-p 4 \
+		--concatenate \
+		--destdir ${PYTHON3_SITELIB}/PyQt4 \
+		--qsci-incdir ${B}/Qt4Qt5 \
+		--qsci-libdir ${B}/Qt4Qt5 \
+		--pyqt PyQt4 \
+		--sip ${PYTHON3_SITELIB}/sip \
+		--pyqt-sipdir /usr/share/python3-sip/PyQt4 \
+		--qsci-sipdir /usr/share/python3-sip/PyQt4 \
 		|| error "python3 configure.py failed"
 
 	cygmake -j1
 }
 
 src_install() {
-	for d in Qt4Qt5 designer-Qt4
+	for d in Qt4Qt5 designer-Qt4Qt5 Python Python3
 	do
 		cd ${B}/${d}
 		qt4_qmake_install
-	done
-
-	for d in Python Python3
-	do
-		cd ${B}/${d}
-		cyginstall
 	done
 }

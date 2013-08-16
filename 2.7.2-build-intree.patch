@@ -1,12 +1,12 @@
---- origsrc/QScintilla-gpl-2.7/designer-Qt4/designer.pro	2011-06-13 07:16:23.000000000 -0500
-+++ src/QScintilla-gpl-2.7/designer-Qt4/designer.pro	2012-12-10 20:44:25.358392700 -0600
+--- origsrc/QScintilla-gpl-2.7/designer-Qt4Qt5/designer.pro	2011-06-13 07:16:23.000000000 -0500
++++ src/QScintilla-gpl-2.7/designer-Qt4Qt5/designer.pro	2012-12-10 20:44:25.358392700 -0600
 @@ -12,4 +12,6 @@ SOURCES = qscintillaplugin.cpp
  target.path = $$[QT_INSTALL_PLUGINS]/designer
  INSTALLS += target
  
 +INCLUDEPATH += ../Qt4Qt5
 +QMAKE_LIBDIR += ../Qt4Qt5
- LIBS += -lqscintilla2
+ LIBS += -L$$[QT_INSTALL_LIBS] -lqscintilla2
 --- origsrc/QScintilla-gpl-2.7/example-Qt4Qt5/application.pro	2012-11-20 10:26:39.000000000 -0600
 +++ src/QScintilla-gpl-2.7/example-Qt4Qt5/application.pro	2013-06-04 23:26:30.026389400 -0500
 @@ -8,4 +8,6 @@ HEADERS       = mainwindow.h
