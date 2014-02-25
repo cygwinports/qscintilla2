@@ -1,7 +1,7 @@
 inherit python python3 qt4-qmake
 
 NAME="qscintilla2"
-VERSION=2.7.2
+VERSION=2.8
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="Scintilla editor class for Qt4"
@@ -21,9 +21,9 @@ PATCH_URI="
 	2.7.2-python-cygwin.patch
 "
 
-PKG_NAMES="lib${NAME}_9 lib${NAME}-common lib${NAME}-devel python-pyqt4-qsci python3-pyqt4-qsci"
-libqscintilla2_9_REQUIRES="libqscintilla2-common"
-libqscintilla2_9_CONTENTS="usr/bin/cyg${NAME}-9.dll"
+PKG_NAMES="lib${NAME}_11 lib${NAME}-common lib${NAME}-devel python-pyqt4-qsci python3-pyqt4-qsci"
+libqscintilla2_11_REQUIRES="libqscintilla2-common"
+libqscintilla2_11_CONTENTS="usr/bin/cyg${NAME}-11.dll"
 libqscintilla2_common_CONTENTS="usr/share/doc/ ${QT4_DATADIR#/}/"
 libqscintilla2_devel_CONTENTS="usr/include/ usr/lib/lib* ${QT4_PLUGINSDIR#/}/"
 python_pyqt4_qsci_REQUIRES="python-pyqt4"
@@ -55,6 +55,9 @@ src_compile() {
 		--qsci-sipdir /usr/share/python-sip/PyQt4 \
 		|| error "python configure.py failed"
 
+	sed -e 's/strip/:/g' \
+	    -e "/^CFLAGS/s|-O2|${CFLAGS}|" -e "/^CXXFLAGS/s|-O2|${CXXFLAGS}|" \
+	    -i Makefile
 	cygmake -j1
 
 	mkdir -p ${B}/Python3
@@ -71,6 +74,9 @@ src_compile() {
 		--qsci-sipdir /usr/share/python3-sip/PyQt4 \
 		|| error "python3 configure.py failed"
 
+	sed -e 's/strip/:/g' \
+	    -e "/^CFLAGS/s|-O2|${CFLAGS}|" -e "/^CXXFLAGS/s|-O2|${CXXFLAGS}|" \
+	    -i Makefile
 	cygmake -j1
 }
 
