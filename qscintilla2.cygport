@@ -1,7 +1,7 @@
 inherit python python3 qt4-qmake
 
 NAME="qscintilla2"
-VERSION=2.8
+VERSION=2.8.1
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="Scintilla editor class for Qt4"
@@ -17,7 +17,7 @@ HOMEPAGE="http://www.riverbankcomputing.com/software/qscintilla/"
 SRC_URI="mirror://sourceforge/pyqt/QScintilla-gpl-${VERSION}.tar.gz"
 SRC_DIR="QScintilla-gpl-${VERSION}"
 PATCH_URI="
-	2.7.2-build-intree.patch
+	2.8.1-build-intree.patch
 	2.7.2-python-cygwin.patch
 "
 

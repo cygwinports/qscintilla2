@@ -1,0 +1,29 @@
+--- origsrc/QScintilla-gpl-2.8.1/designer-Qt4Qt5/designer.pro	2013-12-31 10:34:56.000000000 -0600
++++ src/QScintilla-gpl-2.8.1/designer-Qt4Qt5/designer.pro	2014-07-22 22:59:58.020016300 -0500
+@@ -4,7 +4,7 @@
+ TEMPLATE = lib
+ TARGET = qscintillaplugin
+ 
+-CONFIG += release plugin qscintilla2
++CONFIG += release plugin
+ 
+ greaterThan(QT_MAJOR_VERSION, 4) {
+     QT += designer
+@@ -21,3 +21,7 @@ SOURCES = qscintillaplugin.cpp
+ 
+ target.path = $$[QT_INSTALL_PLUGINS]/designer
+ INSTALLS += target
++
++INCLUDEPATH += ../Qt4Qt5
++QMAKE_LIBDIR += ../Qt4Qt5
++LIBS += -lqscintilla2
+--- origsrc/QScintilla-gpl-2.8.1/example-Qt4Qt5/application.pro	2013-12-31 10:34:37.000000000 -0600
++++ src/QScintilla-gpl-2.8.1/example-Qt4Qt5/application.pro	2014-07-22 22:59:44.739329900 -0500
+@@ -7,3 +7,7 @@ macx {
+ HEADERS      = mainwindow.h
+ SOURCES      = main.cpp mainwindow.cpp
+ RESOURCES    = application.qrc
++
++INCLUDEPATH  += ../Qt4Qt5
++QMAKE_LIBDIR += ../Qt4Qt5
++LIBS         += -lqscintilla2
