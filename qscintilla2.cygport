@@ -1,8 +1,8 @@
-inherit python python3 qt4-qmake
+inherit python python3 qt4-qmake qt5-qmake
 
 NAME="qscintilla2"
 VERSION=2.8.4
-RELEASE=1
+RELEASE=2
 CATEGORY="Libs"
 SUMMARY="Scintilla editor class for Qt4"
 DESCRIPTION="QScintilla is a port to Qt of Neil Hodgson's Scintilla C++ editor
@@ -17,73 +17,116 @@ HOMEPAGE="http://www.riverbankcomputing.com/software/qscintilla/"
 SRC_URI="mirror://sourceforge/pyqt/QScintilla-gpl-${VERSION}.tar.gz"
 SRC_DIR="QScintilla-gpl-${VERSION}"
 PATCH_URI="
-	2.8.1-build-intree.patch
+	http://pkgs.fedoraproject.org/cgit/qscintilla.git/plain/QScintilla-gpl-2.8.4-qt5.patch
+	2.8.4-build-casesensitive.patch
 	2.8.4-python-cygwin.patch
 "
 
-PKG_NAMES="lib${NAME}_11 lib${NAME}-common lib${NAME}-devel python-pyqt4-qsci python3-pyqt4-qsci"
+PKG_NAMES="lib${NAME}_11 lib${NAME}-common lib${NAME}-devel
+	lib${NAME}-qt5_11 lib${NAME}-qt5-common lib${NAME}-qt5-devel
+	python-pyqt4-qsci python3-pyqt4-qsci python-pyqt5-qsci python3-pyqt5-qsci"
 libqscintilla2_11_REQUIRES="libqscintilla2-common"
 libqscintilla2_11_CONTENTS="usr/bin/cyg${NAME}-11.dll"
-libqscintilla2_common_CONTENTS="usr/share/doc/ ${QT4_DATADIR#/}/"
-libqscintilla2_devel_CONTENTS="usr/include/ usr/lib/lib* ${QT4_PLUGINSDIR#/}/"
+libqscintilla2_common_CONTENTS="usr/share/doc/${NAME}/ ${QT4_DATADIR#/}/"
+libqscintilla2_devel_CONTENTS="
+	usr/include/qt4/Qsci/
+	usr/lib/libqscintilla2.dll.a
+	${QT4_PLUGINSDIR#/}/"
+libqscintilla2_qt5_11_REQUIRES="libqscintilla2-qt5-common"
+libqscintilla2_qt5_11_CONTENTS="usr/bin/cyg${NAME}-qt5-11.dll"
+libqscintilla2_qt5_common_CONTENTS="usr/share/doc/${NAME}-qt5/ ${QT5_DATADIR#/}/"
+libqscintilla2_qt5_devel_CONTENTS="
+	usr/include/qt5/Qsci/
+	usr/lib/libqscintilla2-qt5.dll.a
+	${QT5_PLUGINSDIR#/}/"
 python_pyqt4_qsci_REQUIRES="python-pyqt4"
-python_pyqt4_qsci_CONTENTS="${PYTHON_SITELIB#/} usr/share/python-sip/"
+python_pyqt4_qsci_CONTENTS="${PYTHON_SITELIB#/}/PyQt4/ usr/share/python-sip/PyQt4/"
+python_pyqt5_qsci_REQUIRES="python-pyqt5"
+python_pyqt5_qsci_CONTENTS="${PYTHON_SITELIB#/}/PyQt5/ usr/share/python-sip/PyQt5/"
 python3_pyqt4_qsci_REQUIRES="python3-pyqt4"
-python3_pyqt4_qsci_CONTENTS="${PYTHON3_SITELIB#/} usr/share/python3-sip/"
+python3_pyqt4_qsci_CONTENTS="${PYTHON3_SITELIB#/}/PyQt4/ usr/share/python3-sip/PyQt4/"
+python3_pyqt5_qsci_REQUIRES="python3-pyqt5"
+python3_pyqt5_qsci_CONTENTS="${PYTHON3_SITELIB#/}/PyQt5/ usr/share/python3-sip/PyQt5/"
 
-DEPEND="pkgconfig(QtGui) pkgconfig(QtDesigner)"
+DEPEND="pkgconfig(QtGui) pkgconfig(QtDesigner) pkgconfig(Qt5Widgets)"
 
 src_compile() {
-	lndirs
+	export QMAKEFEATURES=${S}/Qt4Qt5/features
 
-	for d in Qt4Qt5 designer-Qt4Qt5 example-Qt4Qt5
+	for v in 4 5
 	do
-		cd ${B}/${d}
-		cygqmake4
+		mkdir -p ${B}/Qt$v
+		cd ${B}/Qt$v
+		cygqmake$v ${S}/Qt4Qt5
 		cygmake
+
+		mkdir -p ${B}/designer-Qt$v
+		cd ${B}/designer-Qt$v
+		cygqmake$v ${S}/designer-Qt4Qt5 INCLUDEPATH+=${S}/Qt4Qt5 QMAKE_LFLAGS+=-L../Qt$v
+		cygmake
+
+		mkdir -p ${B}/example-Qt$v
+		cd ${B}/example-Qt$v
+		cygqmake$v ${S}/example-Qt4Qt5 INCLUDEPATH+=${S}/Qt4Qt5 QMAKE_LFLAGS+=-L../Qt$v
+		cygmake
+
+		qmake_var=QT${v}_QMAKE
+
+		mkdir -p ${B}/Python2-Qt$v
+		lndirs ${S}/Python ${B}/Python2-Qt$v
+		cd ${B}/Python2-Qt$v
+		${PYTHON} configure.py \
+			--concatenate \
+			--destdir ${PYTHON_SITELIB}/PyQt$v \
+			--qmake ${!qmake_var} \
+			--qsci-incdir ${S}/Qt4Qt5 \
+			--qsci-libdir ${B}/Qt$v \
+			--pyqt PyQt$v \
+			--sip ${PYTHON_SITELIB}/sip \
+			--pyqt-sipdir /usr/share/python-sip/PyQt$v \
+			--qsci-sipdir /usr/share/python-sip/PyQt$v \
+			|| error "python configure.py failed"
+
+		sed -e 's/strip/:/g' \
+		    -e "/^CFLAGS/s|-O2|${CFLAGS}|" -e "/^CXXFLAGS/s|-O2|${CXXFLAGS}|" \
+		    -i Makefile
+		cygmake -j1
+
+		mkdir -p ${B}/Python3-Qt$v
+		lndirs ${S}/Python ${B}/Python3-Qt$v
+		cd ${B}/Python3-Qt$v
+		${PYTHON3} configure.py \
+			--concatenate \
+			--destdir ${PYTHON3_SITELIB}/PyQt$v \
+			--qmake ${!qmake_var} \
+			--qsci-incdir ${S}/Qt4Qt5 \
+			--qsci-libdir ${B}/Qt$v \
+			--pyqt PyQt$v \
+			--sip ${PYTHON3_SITELIB}/sip \
+			--pyqt-sipdir /usr/share/python3-sip/PyQt$v \
+			--qsci-sipdir /usr/share/python3-sip/PyQt$v \
+			|| error "python3 configure.py failed"
+
+		sed -e 's/strip/:/g' \
+		    -e "/^CFLAGS/s|-O2|${CFLAGS}|" -e "/^CXXFLAGS/s|-O2|${CXXFLAGS}|" \
+		    -i Makefile
+		cygmake -j1
 	done
-
-	cd ${B}/Python
-	${PYTHON} configure.py \
-		--concatenate \
-		--destdir ${PYTHON_SITELIB}/PyQt4 \
-		--qsci-incdir ${B}/Qt4Qt5 \
-		--qsci-libdir ${B}/Qt4Qt5 \
-		--pyqt PyQt4 \
-		--sip ${PYTHON_SITELIB}/sip \
-		--pyqt-sipdir /usr/share/python-sip/PyQt4 \
-		--qsci-sipdir /usr/share/python-sip/PyQt4 \
-		|| error "python configure.py failed"
-
-	sed -e 's/strip/:/g' \
-	    -e "/^CFLAGS/s|-O2|${CFLAGS}|" -e "/^CXXFLAGS/s|-O2|${CXXFLAGS}|" \
-	    -i Makefile
-	cygmake -j1
-
-	mkdir -p ${B}/Python3
-	lndirs ${S}/Python ${B}/Python3
-	cd ${B}/Python3
-	${PYTHON3} configure.py \
-		--concatenate \
-		--destdir ${PYTHON3_SITELIB}/PyQt4 \
-		--qsci-incdir ${B}/Qt4Qt5 \
-		--qsci-libdir ${B}/Qt4Qt5 \
-		--pyqt PyQt4 \
-		--sip ${PYTHON3_SITELIB}/sip \
-		--pyqt-sipdir /usr/share/python3-sip/PyQt4 \
-		--qsci-sipdir /usr/share/python3-sip/PyQt4 \
-		|| error "python3 configure.py failed"
-
-	sed -e 's/strip/:/g' \
-	    -e "/^CFLAGS/s|-O2|${CFLAGS}|" -e "/^CXXFLAGS/s|-O2|${CXXFLAGS}|" \
-	    -i Makefile
-	cygmake -j1
 }
 
 src_install() {
-	for d in Qt4Qt5 designer-Qt4Qt5 Python Python3
+	for v in 4 5
 	do
-		cd ${B}/${d}
-		qt4_qmake_install
+		for d in Qt$v designer-Qt$v Python2-Qt$v Python3-Qt$v
+		do
+			cd ${B}/${d}
+			qt${v}_qmake_install
+		done
 	done
+
+	cd ${S}
+	dodoc LICENSE.* NEWS README *.TXT
+
+	docinto /${NAME}-qt5
+	dodoc LICENSE.* NEWS README *.TXT
 }
