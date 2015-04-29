@@ -2,7 +2,7 @@ inherit python python3 qt4-qmake qt5-qmake
 
 NAME="qscintilla2"
 VERSION=2.8.4
-RELEASE=2
+RELEASE=3
 CATEGORY="Libs"
 SUMMARY="Scintilla editor class for Qt4"
 DESCRIPTION="QScintilla is a port to Qt of Neil Hodgson's Scintilla C++ editor
@@ -20,6 +20,7 @@ PATCH_URI="
 	http://pkgs.fedoraproject.org/cgit/qscintilla.git/plain/QScintilla-gpl-2.8.4-qt5.patch
 	2.8.4-build-casesensitive.patch
 	2.8.4-python-cygwin.patch
+	2.8.4-dllexport.patch
 "
 
 PKG_NAMES="lib${NAME}_11 lib${NAME}-common lib${NAME}-devel
