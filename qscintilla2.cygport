@@ -2,7 +2,7 @@ inherit python python3 qt4-qmake qt5-qmake
 
 NAME="qscintilla2"
 VERSION=2.8.4
-RELEASE=3
+RELEASE=4
 CATEGORY="Libs"
 SUMMARY="Scintilla editor class for Qt4"
 DESCRIPTION="QScintilla is a port to Qt of Neil Hodgson's Scintilla C++ editor
