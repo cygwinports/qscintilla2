@@ -1,8 +1,8 @@
 inherit python python3 qt4-qmake qt5-qmake
 
 NAME="qscintilla2"
-VERSION=2.8.4
-RELEASE=4
+VERSION=2.9
+RELEASE=1
 CATEGORY="Libs"
 SUMMARY="Scintilla editor class for Qt4"
 DESCRIPTION="QScintilla is a port to Qt of Neil Hodgson's Scintilla C++ editor
@@ -17,28 +17,37 @@ HOMEPAGE="http://www.riverbankcomputing.com/software/qscintilla/"
 SRC_URI="mirror://sourceforge/pyqt/QScintilla-gpl-${VERSION}.tar.gz"
 SRC_DIR="QScintilla-gpl-${VERSION}"
 PATCH_URI="
-	http://pkgs.fedoraproject.org/cgit/qscintilla.git/plain/QScintilla-gpl-2.8.4-qt5.patch
-	2.8.4-build-casesensitive.patch
+	http://pkgs.fedoraproject.org/cgit/qscintilla.git/plain/QScintilla-gpl-2.9-qt5.patch
+	http://pkgs.fedoraproject.org/cgit/qscintilla.git/plain/QScintilla-gpl-2.9-qt5_mkspecs.patch
+	2.9-build-casesensitive.patch
 	2.8.4-python-cygwin.patch
 	2.8.4-dllexport.patch
 "
 
-PKG_NAMES="lib${NAME}_11 lib${NAME}-common lib${NAME}-devel
-	lib${NAME}-qt5_11 lib${NAME}-qt5-common lib${NAME}-qt5-devel
+PKG_NAMES="lib${NAME}_12 lib${NAME}-common lib${NAME}-devel
+	lib${NAME}-qt5_12 lib${NAME}-qt5-common lib${NAME}-qt5-devel
 	python-pyqt4-qsci python3-pyqt4-qsci python-pyqt5-qsci python3-pyqt5-qsci"
-libqscintilla2_11_REQUIRES="libqscintilla2-common"
-libqscintilla2_11_CONTENTS="usr/bin/cyg${NAME}-11.dll"
-libqscintilla2_common_CONTENTS="usr/share/doc/${NAME}/ ${QT4_DATADIR#/}/"
+libqscintilla2_12_REQUIRES="libqscintilla2-common"
+libqscintilla2_12_CONTENTS="usr/bin/cyg${NAME}-12.dll"
+libqscintilla2_common_CONTENTS="
+	usr/share/doc/${NAME}/
+	${QT4_DATADIR#/}/qsci/
+	${QT4_DATADIR#/}/translations/"
 libqscintilla2_devel_CONTENTS="
 	usr/include/qt4/Qsci/
 	usr/lib/libqscintilla2.dll.a
+	${QT4_MKSPECSDIR#/}/features/qscintilla2.prf
 	${QT4_PLUGINSDIR#/}/"
-libqscintilla2_qt5_11_REQUIRES="libqscintilla2-qt5-common"
-libqscintilla2_qt5_11_CONTENTS="usr/bin/cyg${NAME}-qt5-11.dll"
-libqscintilla2_qt5_common_CONTENTS="usr/share/doc/${NAME}-qt5/ ${QT5_DATADIR#/}/"
+libqscintilla2_qt5_12_REQUIRES="libqscintilla2-qt5-common"
+libqscintilla2_qt5_12_CONTENTS="usr/bin/cyg${NAME}-qt5-12.dll"
+libqscintilla2_qt5_common_CONTENTS="
+	usr/share/doc/${NAME}-qt5/
+	${QT5_DATADIR#/}/qsci/
+	${QT5_DATADIR#/}/translations/"
 libqscintilla2_qt5_devel_CONTENTS="
 	usr/include/qt5/Qsci/
 	usr/lib/libqscintilla2-qt5.dll.a
+	${QT5_MKSPECSDIR#/}/features/qscintilla2.prf
 	${QT5_PLUGINSDIR#/}/"
 python_pyqt4_qsci_REQUIRES="python-pyqt4"
 python_pyqt4_qsci_CONTENTS="${PYTHON_SITELIB#/}/PyQt4/ usr/share/python-sip/PyQt4/"
