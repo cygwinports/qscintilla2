@@ -1,7 +1,7 @@
 inherit python python3 qt4-qmake qt5-qmake
 
 NAME="qscintilla2"
-VERSION=2.9
+VERSION=2.9.3
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="Scintilla editor class for Qt4"
@@ -14,14 +14,12 @@ used in debuggers to indicate breakpoints and the current line. Styling choices
 are more open than with many editors, allowing the use of proportional fonts,
 bold and italics, multiple foreground/background colours and multiple fonts."
 HOMEPAGE="http://www.riverbankcomputing.com/software/qscintilla/"
-SRC_URI="mirror://sourceforge/pyqt/QScintilla-gpl-${VERSION}.tar.gz"
-SRC_DIR="QScintilla-gpl-${VERSION}"
+SRC_URI="mirror://sourceforge/pyqt/QScintilla_gpl-${VERSION}.tar.gz"
+SRC_DIR="QScintilla_gpl-${VERSION}"
 PATCH_URI="
-	http://pkgs.fedoraproject.org/cgit/qscintilla.git/plain/QScintilla-gpl-2.9-qt5.patch
-	http://pkgs.fedoraproject.org/cgit/qscintilla.git/plain/QScintilla-gpl-2.9-qt5_mkspecs.patch
+	http://pkgs.fedoraproject.org/cgit/rpms/qscintilla.git/plain/QScintilla_gpl-2.9.3-qt5.patch
 	2.9-build-casesensitive.patch
 	2.8.4-python-cygwin.patch
-	2.8.4-dllexport.patch
 "
 
 PKG_NAMES="lib${NAME}_12 lib${NAME}-common lib${NAME}-devel
