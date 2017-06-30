@@ -1,16 +1,16 @@
---- origsrc/QScintilla-gpl-2.9/Qt4Qt5/qscintilla.pro	2015-10-19 13:40:01.978854800 -0500
-+++ src/QScintilla-gpl-2.9/Qt4Qt5/qscintilla.pro	2015-10-19 13:40:31.566611900 -0500
-@@ -266,7 +266,7 @@ SOURCES = \
- 	../lexers/LexBaan.cpp \
+--- origsrc/QScintilla_gpl-2.10/Qt4Qt5/qscintilla.pro	2017-02-20 06:49:30.000000000 -0600
++++ src/QScintilla_gpl-2.10/Qt4Qt5/qscintilla.pro	2017-05-07 16:51:05.510349000 -0500
+@@ -256,7 +256,7 @@ SOURCES = \
  	../lexers/LexBash.cpp \
  	../lexers/LexBasic.cpp \
+ 	../lexers/LexBatch.cpp \
 -	../lexers/LexBibTex.cpp \
 +	../lexers/LexBibTeX.cpp \
  	../lexers/LexBullant.cpp \
  	../lexers/LexCaml.cpp \
  	../lexers/LexCLW.cpp \
-@@ -296,7 +296,7 @@ SOURCES = \
- 	../lexers/LexInno.cpp \
+@@ -290,7 +290,7 @@ SOURCES = \
+ 	../lexers/LexJSON.cpp \
  	../lexers/LexKix.cpp \
  	../lexers/LexKVIrc.cpp \
 -	../lexers/LexLaTex.cpp \
