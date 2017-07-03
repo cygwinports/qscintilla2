@@ -2,7 +2,7 @@ inherit python2 python3 qt4-qmake qt5-qmake
 
 NAME="qscintilla2"
 VERSION=2.10
-RELEASE=1
+RELEASE=2
 CATEGORY="Libs"
 SUMMARY="Scintilla editor class for Qt4"
 DESCRIPTION="QScintilla is a port to Qt of Neil Hodgson's Scintilla C++ editor
@@ -35,6 +35,7 @@ libqscintilla2_qt4_devel_OBSOLETES="libqscintilla2-devel"
 libqscintilla2_qt4_devel_CONTENTS="
 	usr/include/qt4/Qsci/
 	usr/lib/libqscintilla2_qt4.dll.a
+	usr/lib/libqscintilla2.dll.a
 	${QT4_MKSPECSDIR#/}/features/qscintilla2.prf
 	${QT4_PLUGINSDIR#/}/
 	usr/share/sip/PyQt4/Qsci/
@@ -50,6 +51,7 @@ libqscintilla2_qt5_devel_OBSOLETES="libqscintilla2-qt5-devel"
 libqscintilla2_qt5_devel_CONTENTS="
 	usr/include/qt5/Qsci/
 	usr/lib/libqscintilla2_qt5.dll.a
+	usr/lib/libqscintilla2-qt5.dll.a
 	${QT5_MKSPECSDIR#/}/features/qscintilla2.prf
 	${QT5_PLUGINSDIR#/}/
 	usr/share/sip/PyQt5/Qsci/
@@ -140,6 +142,10 @@ src_install() {
 			qt${v}_qmake_install
 		done
 	done
+
+	# for compatibility with past versions
+	dosym libqscintilla2_qt4.dll.a /usr/lib/libqscintilla2.dll.a
+	dosym libqscintilla2_qt5.dll.a /usr/lib/libqscintilla2-qt5.dll.a
 
 	cd ${S}
 	dodoc LICENSE.* NEWS README *.TXT
