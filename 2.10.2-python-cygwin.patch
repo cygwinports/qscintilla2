@@ -1,0 +1,22 @@
+--- origsrc/QScintilla_gpl-2.10.2/Python/configure.py	2017-11-23 09:00:12.000000000 -0600
++++ src/QScintilla_gpl-2.10.2/Python/configure.py	2017-12-10 16:53:36.170552000 -0600
+@@ -1452,6 +1452,10 @@ win32 {
+     PY_MODULE_SRC = $(DESTDIR_TARGET)
+ 
+     LIBS += -L%s
++} else:cygwin-g++* {
++    PY_MODULE = %s.dll
++    PY_MODULE_SRC = $(TARGET)
++    LIBS += -lpython%d.%d%s
+ } else {
+     PY_MODULE = %s.so
+ 
+@@ -1474,7 +1478,7 @@ QMAKE_POST_LINK = $(COPY_FILE) $$PY_MODU
+ 
+ target.CONFIG = no_check_exist
+ target.files = $$PY_MODULE
+-''' % (mname, quote(target_config.py_pylib_dir), mname))
++''' % (mname, quote(target_config.py_pylib_dir), mname, target_config.py_version >> 16, (target_config.py_version >> 8) &0x0ff, getattr(sys, 'abiflags', ''), mname))
+ 
+     pro.write('''
+ target.path = %s

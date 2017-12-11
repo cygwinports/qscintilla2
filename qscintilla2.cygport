@@ -1,7 +1,7 @@
 inherit python2 python3 qt4-qmake qt5-qmake
 
 NAME="qscintilla2"
-VERSION=2.10.1
+VERSION=2.10.2
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="Scintilla editor class for Qt4"
@@ -17,8 +17,7 @@ HOMEPAGE="http://www.riverbankcomputing.com/software/qscintilla/"
 SRC_URI="mirror://sourceforge/pyqt/QScintilla_gpl-${VERSION}.tar.gz"
 SRC_DIR="QScintilla_gpl-${VERSION}"
 PATCH_URI="
-	2.10-case-sensitivity.patch
-	2.8.4-python-cygwin.patch
+	2.10.2-python-cygwin.patch
 "
 
 PKG_NAMES="lib${NAME}_qt4_13 lib${NAME}_qt4-common lib${NAME}_qt4-devel
